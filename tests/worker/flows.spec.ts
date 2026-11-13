@@ -60,9 +60,12 @@ test("Worker: buyer configures, persists cart, records an order and reorders", a
     .getByRole("button", { name: "Add to wholesale cart", exact: true })
     .click();
   await page.getByRole("link", { name: "Review cart", exact: true }).click();
+  await expect(page).toHaveURL(/\/cart$/);
+  await expect(page.locator(".cart-line")).toHaveCount(1);
   await page
     .getByRole("button", { name: "Increase quantity", exact: true })
     .click();
+  await expect(page.locator(".cart-line .stepper span")).toHaveText("1050");
   await page.reload();
   await expect(page.locator(".cart-line .stepper span")).toHaveText("1050");
   await capture(page, "cart");
@@ -104,6 +107,28 @@ test("Worker: buyer configures, persists cart, records an order and reorders", a
   ).toBeVisible();
   await page.reload();
   await expect(status).toHaveValue("IN_REVIEW");
+});
+
+test("Worker: concurrent public requests return complete pages", async ({
+  request,
+}) => {
+  const routes = [
+    "/products",
+    "/contact",
+    "/collections/cake-salmon-boards",
+    "/sustainability",
+  ];
+  for (let round = 0; round < 3; round++) {
+    await Promise.all(
+      routes.map(async (route) => {
+        const response = await request.get(route);
+        expect(response.status(), route).toBe(200);
+        const html = await response.text();
+        expect(html, route).toMatch(/<h1[\s>]/);
+        expect(html, route).not.toMatch(/<html[^>]+id="__next_error__"/);
+      }),
+    );
+  }
 });
 
 test("Worker: RFQ and admin product edits persist across refresh", async ({

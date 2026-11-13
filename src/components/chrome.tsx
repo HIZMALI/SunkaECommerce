@@ -16,7 +16,7 @@ import {
   Trash2,
 } from "lucide-react";
 import { useCartSummary, useStore } from "./store";
-import { A, Arrow, DemoNote, Modal, Photo } from "./ui";
+import { Button, A, Arrow, DemoNote, Modal, Photo } from "./ui";
 import { money } from "@/lib/pricing";
 export function Header() {
   const { t, locale, categories, title, cart, setDrawer, user } = useStore();
@@ -47,7 +47,7 @@ export function Header() {
   }
   const nav = (
     <>
-      <button
+      <Button
         className="nav-dropdown"
         onClick={() => setMenu(!menu)}
         aria-expanded={menu}
@@ -55,7 +55,7 @@ export function Header() {
       >
         {t("Products", "Ürünler")}
         <ChevronDown size={13} />
-      </button>
+      </Button>
       <A href="/industries">{t("Industries", "Sektörler")}</A>
       <A href="/wholesale">{t("Wholesale", "Toptan Satış")}</A>
       <A href="/request-quote">{t("Custom Solutions", "Özel Çözümler")}</A>
@@ -85,13 +85,13 @@ export function Header() {
       </div>
       <header className="header">
         <div className="header-inner">
-          <button
+          <Button
             className="icon-btn hamburger"
             aria-label={t("Open menu", "Menüyü aç")}
             onClick={() => setMobile(true)}
           >
             <Menu size={23} />
-          </button>
+          </Button>
           <A href="/" className="logo" aria-label="Sun-Ka / Larton home">
             <Image
               src="/images/logo.png"
@@ -109,27 +109,27 @@ export function Header() {
           </nav>
           <div className="header-actions">
             <div className="locale-switch" aria-label={t("Language", "Dil")}>
-              <button
+              <Button
                 className={locale === "en" ? "active" : ""}
                 onClick={() => language("en")}
               >
                 EN
-              </button>
+              </Button>
               <span>/</span>
-              <button
+              <Button
                 className={locale === "tr" ? "active" : ""}
                 onClick={() => language("tr")}
               >
                 TR
-              </button>
+              </Button>
             </div>
-            <button
+            <Button
               className="icon-btn"
               aria-label={t("Search", "Ara")}
               onClick={() => setSearch(true)}
             >
               <Search size={20} />
-            </button>
+            </Button>
             <A
               href="/account"
               className="icon-btn account-icon"
@@ -138,19 +138,19 @@ export function Header() {
               <UserRound size={20} />
               {user && <i />}
             </A>
-            <button
+            <Button
               className="icon-btn bag-btn"
               aria-label={t("Open cart", "Sepeti aç")}
               onClick={() => setDrawer(true)}
             >
               <ShoppingBag size={20} />
               <span>{cart.length}</span>
-            </button>
+            </Button>
           </div>
         </div>
         {menu && (
           <>
-            <button
+            <Button
               className="mega-backdrop"
               aria-label={t("Close menu", "Menüyü kapat")}
               onClick={() => setMenu(false)}
@@ -260,12 +260,12 @@ export function Header() {
             )}
             aria-label={t("Search products", "Ürün ara")}
           />
-          <button
+          <Button
             className="icon-btn"
             aria-label={t("Show results", "Sonuçları göster")}
           >
             <ArrowRight />
-          </button>
+          </Button>
         </form>
         <p className="muted">
           {t(
@@ -335,7 +335,7 @@ export function CartLines({ compact = false }: { compact?: boolean }) {
             </p>
             <div className="cart-line-bottom">
               <div className="stepper small">
-                <button
+                <Button
                   aria-label={t("Decrease quantity", "Miktarı azalt")}
                   disabled={i.quantity <= i.minimum}
                   onClick={() =>
@@ -346,28 +346,28 @@ export function CartLines({ compact = false }: { compact?: boolean }) {
                   }
                 >
                   <Minus size={13} />
-                </button>
+                </Button>
                 <span>{i.quantity}</span>
-                <button
+                <Button
                   aria-label={t("Increase quantity", "Miktarı artır")}
                   disabled={i.quantity >= (i.variant?.demoCapacity ?? 10000)}
                   onClick={() => update(i.variantId, i.quantity + i.multiple)}
                 >
                   <Plus size={13} />
-                </button>
+                </Button>
               </div>
               <strong>
                 {i.price
                   ? money(i.price.totalCents, locale)
                   : t("Approval required", "Onay gerekli")}
               </strong>
-              <button
+              <Button
                 className="icon-btn remove"
                 onClick={() => remove(i.variantId)}
                 aria-label={t("Remove item", "Ürünü kaldır")}
               >
                 <Trash2 size={16} />
-              </button>
+              </Button>
             </div>
           </div>
         </article>

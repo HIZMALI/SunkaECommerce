@@ -7,13 +7,13 @@ type SeedEnv = {
   DEMO_MODE?: string;
   APP_ENV?: string;
 };
-let initialized: Promise<void> | undefined;
+let initialized = false;
 export async function ensureSeed(env: SeedEnv) {
-  initialized ??= seed(env).catch((error) => {
-    initialized = undefined;
-    throw error;
-  });
-  return initialized;
+  if (initialized) return;
+  // Never cache an in-flight I/O promise across Cloudflare requests. A canceled
+  // speculative request must not leave later visitors waiting on its lifetime.
+  await seed(env);
+  initialized = true;
 }
 async function seed(env: SeedEnv) {
   if (env.DEMO_MODE !== "true" || env.APP_ENV !== "demo")

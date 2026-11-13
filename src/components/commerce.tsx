@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import type { OrderView, PricedLine, QuoteView } from "@/lib/types";
 import { money, canPrice } from "@/lib/pricing";
-import { A, Arrow, Breadcrumb, DemoNote, PageHeading } from "./ui";
+import { Button, A, Arrow, Breadcrumb, DemoNote, PageHeading } from "./ui";
 import { CartLines } from "./chrome";
 import { useCartSummary, useStore } from "./store";
 import { ContactFields, Field, FormError, useFormAction } from "./forms";
@@ -269,7 +269,7 @@ export function CartPage({ checkout = false }: { checkout?: boolean }) {
             <FormError error={validationError} />
             <DemoNote compact />
             {checkout ? (
-              <button
+              <Button
                 type="submit"
                 form="checkout-form"
                 className="button full"
@@ -284,7 +284,7 @@ export function CartPage({ checkout = false }: { checkout?: boolean }) {
                   ? t("Recording order…", "Sipariş kaydediliyor…")
                   : t("Record demo order", "Demo siparişi kaydet")}
                 <ArrowRight size={18} />
-              </button>
+              </Button>
             ) : (
               <A
                 href="/checkout"
@@ -396,7 +396,7 @@ export function OrderDetails({
               {t("Notes", "Notlar")}: {o.notes}
             </p>
           )}
-          <button
+          <Button
             className="button secondary full"
             onClick={() => {
               setCart(
@@ -417,7 +417,7 @@ export function OrderDetails({
           >
             <RotateCcw size={16} />
             {t("Start a reorder", "Yeniden sipariş başlat")}
-          </button>
+          </Button>
           <A href="/account" className="text-link">
             {t("View your account", "Hesabınızı görüntüleyin")}
             <Arrow />
@@ -482,7 +482,7 @@ export function Account({
         />
         <div>
           <Status value={canPrice(user.role) ? "APPROVED" : "PENDING"} />
-          <button
+          <Button
             className="text-link"
             disabled={!ready || signingOut}
             onClick={async () => {
@@ -498,7 +498,7 @@ export function Account({
           >
             {t("Sign out", "Çıkış yap")}
             <Arrow />
-          </button>
+          </Button>
           {user.role === "ADMIN" && (
             <A href="/admin" className="text-link">
               {t("Administration", "Yönetim paneli")}
@@ -521,7 +521,7 @@ export function Account({
           ["quotes", t("Quote requests", "Teklif talepleri")],
           ["profile", t("Company profile", "Firma bilgileri")],
         ].map(([id, name]) => (
-          <button
+          <Button
             key={id}
             className={tab === id ? "selected" : ""}
             onClick={() => setTab(id)}
@@ -532,7 +532,7 @@ export function Account({
               : id === "quotes"
                 ? ` (${quotes.length})`
                 : ""}
-          </button>
+          </Button>
         ))}
       </div>
       {tab === "orders" ? (
@@ -665,10 +665,10 @@ export function Account({
                 {t("Company profile saved.", "Firma bilgileri kaydedildi.")}
               </p>
             )}
-            <button disabled={profile.busy} className="button">
+            <Button disabled={profile.busy} className="button">
               {t("Save company profile", "Firma bilgilerini kaydet")}
               <Arrow />
-            </button>
+            </Button>
           </form>
         </div>
       )}

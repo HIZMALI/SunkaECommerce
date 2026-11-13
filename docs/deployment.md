@@ -15,6 +15,8 @@ Sites, .openai/hosting.json içindeki DB binding'ini sağlar ve migration'ları 
 
 Prisma D1 adapter'ı transactions sağlamadığından sipariş + satırlar, firma + kullanıcı + başvuru, ürün + fiyat kademeleri ve başvuru + hesap rolü değişikliği D1 transactional batch ile kaydedilir. Fiyat/miktar kuralları ortak pricing.ts / catalog.ts kodunu kullanır. Sunucu istemcinin gönderdiği fiyatı kabul etmez.
 
+Worker, Prisma istemcisini AsyncLocalStorage üzerinden her HTTP isteğine ayrı bağlar. D1 I/O'su yapan bekleyen Promise'lar veya Prisma istemcileri farklı istekler arasında paylaşılmaz; iptal edilen bir istek sonrakileri bekletmemelidir. Link ön yüklemesi kapalıdır; gezinme kullanıcı tıkladığında başlar. Etkileşimli düğmeler hydration tamamlanana kadar devre dışıdır. Bu kurallar gerçek yayın testinde görülen iptal/erken tıklama sorunlarını önlemek içindir.
+
 Yalnızca temiz kurulumdan çıkarılmış hayali seed verileri src/edge/seed-data.json içindedir. Çalışma veritabanındaki QA/kullanıcı kayıtları taşınmaz. Yönetici hash'i bu dosyada yoktur; ilk kurulumda Sites secret'ından üretilir. Sabit örnek ID'ler, INSERT OR IGNORE ve migration-owned SeedState kaydı mevcut düzenlemelerin sonraki açılışlarda sıfırlanmasını engeller. Şema request sırasında oluşturulmaz/değiştirilmez.
 
 ## Runtime ayarları

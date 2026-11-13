@@ -10,7 +10,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useStore } from "./store";
-import { A, Arrow, Photo } from "./ui";
+import { Button, A, Arrow, Photo } from "./ui";
 import { ProductCard } from "./products";
 export function Home() {
   const { t, categories, title, products } = useStore();
@@ -446,7 +446,7 @@ export function Finder() {
             t("Shape", "Şekil"),
             t("Finish", "Yüzey"),
           ].map((s, n) => (
-            <button
+            <Button
               key={s}
               onClick={() => n < step && setStep(n)}
               className={step === n ? "current" : step > n ? "done" : ""}
@@ -454,7 +454,7 @@ export function Finder() {
             >
               <span>0{n + 1}</span>
               {s}
-            </button>
+            </Button>
           ))}
         </div>
         <form
@@ -506,12 +506,12 @@ export function Finder() {
               </option>
             ))}
           </select>
-          <button className="button">
+          <Button className="button">
             {step < 3
               ? t("Next step", "Sonraki adım")
               : t("Find my board", "Ürünleri bul")}
             <ArrowRight size={18} />
-          </button>
+          </Button>
         </form>
         <p>
           {t(

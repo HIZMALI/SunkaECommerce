@@ -9,7 +9,15 @@ import {
   UserRound,
 } from "lucide-react";
 import { useStore } from "./store";
-import { A, Arrow, Breadcrumb, DemoNote, PageHeading, Photo } from "./ui";
+import {
+  Button,
+  A,
+  Arrow,
+  Breadcrumb,
+  DemoNote,
+  PageHeading,
+  Photo,
+} from "./ui";
 import { canPrice } from "@/lib/pricing";
 export function DemoGuide() {
   const { t, demo, user, buyerDemo, ready } = useStore();
@@ -123,7 +131,7 @@ export function DemoGuide() {
         </div>
         <div>
           {demo && (
-            <button
+            <Button
               className="button full"
               disabled={!ready}
               onClick={buyerDemo}
@@ -137,7 +145,7 @@ export function DemoGuide() {
                 ? t("Buyer demo active", "Müşteri demosu açık")
                 : t("Explore Buyer Demo", "Müşteri demosunu keşfet")}
               <ArrowRight size={17} />
-            </button>
+            </Button>
           )}
           <A className="text-link" href="/products/die-cut-round-boards">
             {t("Open the sample product", "Örnek ürünü aç")}

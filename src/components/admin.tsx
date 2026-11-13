@@ -21,7 +21,7 @@ import type {
   QuoteView,
 } from "@/lib/types";
 import { useStore } from "./store";
-import { A, Arrow, DemoNote, Modal, Photo } from "./ui";
+import { Button, A, Arrow, DemoNote, Modal, Photo } from "./ui";
 import { Status } from "./commerce";
 import { Field, FormError, useFormAction } from "./forms";
 import { money } from "@/lib/pricing";
@@ -353,13 +353,13 @@ export function Admin({
                             </span>
                           </td>
                           <td>
-                            <button
+                            <Button
                               className="table-button"
                               onClick={() => setEditing(p)}
                             >
                               {t("Edit", "Düzenle")}
                               <Arrow />
-                            </button>
+                            </Button>
                           </td>
                         </tr>
                       ))}
@@ -616,10 +616,10 @@ function QuoteEditor({ quote: q }: { quote: QuoteView }) {
             maxLength={3000}
           />
           <FormError error={form.error} />
-          <button disabled={form.busy} className="button small-button">
+          <Button disabled={form.busy} className="button small-button">
             {t("Save quote", "Teklifi kaydet")}
             <Arrow />
-          </button>
+          </Button>
         </form>
       </div>
     </article>
@@ -672,29 +672,29 @@ function ApplicationEditor({
       </p>
       <p>{a.notes}</p>
       <div className="button-row">
-        <button
+        <Button
           className="button small-button"
           disabled={busy || a.status === "APPROVED"}
           onClick={() => save("APPROVED")}
         >
           <CheckCircle2 size={17} />
           {t("Approve account", "Hesabı onayla")}
-        </button>
-        <button
+        </Button>
+        <Button
           className="button secondary small-button"
           disabled={busy || a.status === "REJECTED"}
           onClick={() => save("REJECTED")}
         >
           {t("Reject / remove access", "Reddet / erişimi kaldır")}
-        </button>
+        </Button>
         {a.status !== "PENDING" && (
-          <button
+          <Button
             className="text-link"
             onClick={() => save("PENDING")}
             disabled={busy}
           >
             {t("Return to pending", "Beklemeye al")}
-          </button>
+          </Button>
         )}
       </div>
     </article>
@@ -837,10 +837,10 @@ function ProductEditor({
         </div>
       ))}
       <FormError error={form.error} />
-      <button disabled={form.busy} className="button full">
+      <Button disabled={form.busy} className="button full">
         {t("Save sample product", "Örnek ürünü kaydet")}
         <Arrow />
-      </button>
+      </Button>
     </form>
   );
 }

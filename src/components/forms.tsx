@@ -20,7 +20,15 @@ import {
   MapPin,
 } from "lucide-react";
 import { useStore } from "./store";
-import { A, Arrow, Breadcrumb, DemoNote, PageHeading, Photo } from "./ui";
+import {
+  Button,
+  A,
+  Arrow,
+  Breadcrumb,
+  DemoNote,
+  PageHeading,
+  Photo,
+} from "./ui";
 export function Field({
   name,
   label,
@@ -287,12 +295,12 @@ export function Login() {
             maxLength={128}
           />
           <FormError error={form.error} />
-          <button className="button full" disabled={form.busy}>
+          <Button className="button full" disabled={form.busy}>
             {form.busy
               ? t("Signing in…", "Giriş yapılıyor…")
               : t("Sign in", "Giriş yap")}
             <ArrowRight size={18} />
-          </button>
+          </Button>
         </form>
         {demo && (
           <div className="buyer-demo-card">
@@ -308,7 +316,7 @@ export function Login() {
                 "Onaylı örnek hesapla demo toptan fiyatları inceleyin.",
               )}
             </p>
-            <button
+            <Button
               className="button secondary full"
               disabled={!ready}
               onClick={async () => {
@@ -318,7 +326,7 @@ export function Login() {
             >
               {t("Explore Buyer Demo", "Müşteri demosunu keşfet")}
               <Arrow />
-            </button>
+            </Button>
           </div>
         )}
         <p className="login-apply">
@@ -499,7 +507,7 @@ export function RequestQuote() {
               </div>
               <FormError error={form.error} />
               <DemoNote compact />
-              <button className="button full" disabled={form.busy}>
+              <Button className="button full" disabled={form.busy}>
                 {form.busy
                   ? t("Recording…", "Kaydediliyor…")
                   : t(
@@ -507,7 +515,7 @@ export function RequestQuote() {
                       "Demo teklif talebini kaydet",
                     )}
                 <Arrow />
-              </button>
+              </Button>
               <p className="form-footnote">
                 {t(
                   "No files are uploaded. Describe artwork or technical requirements in the notes.",
@@ -590,14 +598,14 @@ export function Wholesale() {
                 <Arrow />
               </A>
               {demo && (
-                <button
+                <Button
                   className="button secondary full"
                   disabled={!ready}
                   onClick={buyerDemo}
                 >
                   {t("Explore Buyer Demo", "Müşteri demosunu keşfet")}
                   <Arrow />
-                </button>
+                </Button>
               )}
             </div>
             <p className="muted">
@@ -712,12 +720,12 @@ export function Wholesale() {
                     "Yalnızca demo başvurusu. Lütfen hayali iletişim ve firma bilgileri kullanın.",
                   )}
                 </p>
-                <button className="button full" disabled={form.busy}>
+                <Button className="button full" disabled={form.busy}>
                   {form.busy
                     ? t("Recording…", "Kaydediliyor…")
                     : t("Record demo application", "Demo başvurusunu kaydet")}
                   <Arrow />
-                </button>
+                </Button>
               </form>
             )}
           </div>
@@ -874,12 +882,12 @@ export function Contact() {
                 />
               </div>
               <FormError error={form.error} />
-              <button className="button full" disabled={form.busy}>
+              <Button className="button full" disabled={form.busy}>
                 {form.busy
                   ? t("Recording…", "Kaydediliyor…")
                   : t("Record demo message", "Demo mesajını kaydet")}
                 <Arrow />
-              </button>
+              </Button>
             </form>
           )}
         </div>

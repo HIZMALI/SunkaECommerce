@@ -23,7 +23,7 @@ import {
 } from "@/lib/pricing";
 import { useStore } from "./store";
 import { localValue } from "@/lib/i18n";
-import { A, Arrow, Breadcrumb, DemoNote, Modal, Photo } from "./ui";
+import { Button, A, Arrow, Breadcrumb, DemoNote, Modal, Photo } from "./ui";
 export function ProductCard({ product: p }: { product: Product }) {
   const { t, title, val, user, locale } = useStore();
   const [quick, setQuick] = useState(false);
@@ -50,14 +50,14 @@ export function ProductCard({ product: p }: { product: Product }) {
             ? t("MADE TO ORDER", "ÖZEL ÜRETİM")
             : t("WHOLESALE", "TOPTAN")}
         </span>
-        <button
+        <Button
           className="quick-view"
           onClick={() => setQuick(true)}
           aria-label={`${t("Quick view", "Hızlı bakış")}: ${title(p)}`}
         >
           <Eye size={17} />
           <span>{t("Quick view", "Hızlı bakış")}</span>
-        </button>
+        </Button>
       </div>
       <div className="product-card-info">
         <p className="product-category">{val(p.subcategory)}</p>
@@ -212,9 +212,9 @@ export function Catalog({
     <>
       <div className="filters-heading">
         <h2>{t("Refine your selection", "Seçiminizi daraltın")}</h2>
-        <button disabled={isPending} onClick={clear}>
+        <Button disabled={isPending} onClick={clear}>
           {t("Reset", "Sıfırla")}
-        </button>
+        </Button>
       </div>
       {!collection && (
         <label>
@@ -387,13 +387,13 @@ export function Catalog({
               change("q", String(new FormData(e.currentTarget).get("q") ?? ""));
             }}
           >
-            <button
+            <Button
               type="submit"
               disabled={isPending}
               aria-label={t("Search catalogue", "Katalogda ara")}
             >
               <Search size={18} />
-            </button>
+            </Button>
             <input
               name="q"
               disabled={!ready || isPending}
@@ -404,13 +404,13 @@ export function Catalog({
               aria-label={t("Catalog search", "Katalog arama")}
             />
           </form>
-          <button
+          <Button
             className="filter-toggle"
             onClick={() => setFiltersOpen(true)}
           >
             <SlidersHorizontal size={17} />
             {t("Filters", "Filtreler")}
-          </button>
+          </Button>
           <span className="result-count" aria-live="polite">
             {isPending
               ? t("Updating…", "Güncelleniyor…")
@@ -444,7 +444,7 @@ export function Catalog({
                 {Object.entries(selected)
                   .filter(([k, v]) => !["lang", "sort"].includes(k) && v)
                   .map(([k, v]) => (
-                    <button key={k} onClick={() => change(k, "")}>
+                    <Button key={k} onClick={() => change(k, "")}>
                       {k === "category"
                         ? title(
                             categories.find((c) => c.id === v) ?? {
@@ -454,11 +454,11 @@ export function Catalog({
                           )
                         : val(v)}{" "}
                       ×
-                    </button>
+                    </Button>
                   ))}
-                <button onClick={clear}>
+                <Button onClick={clear}>
                   {t("Clear all", "Tümünü temizle")}
-                </button>
+                </Button>
               </div>
             )}
             {list.length ? (
@@ -479,9 +479,9 @@ export function Catalog({
                     "Bu filtrelerle eşleşen örnek ürün yok. Seçimi genişletin veya özel teklif isteyin.",
                   )}
                 </p>
-                <button className="button" onClick={clear}>
+                <Button className="button" onClick={clear}>
                   {t("Reset filters", "Filtreleri sıfırla")}
-                </button>
+                </Button>
                 <A href="/request-quote" className="text-link">
                   {t("Request a custom quote", "Özel teklif isteyin")}
                   <Arrow />
@@ -499,10 +499,10 @@ export function Catalog({
         title={t("Filter materials", "Ürünleri filtrele")}
       >
         <div className="mobile-filters">{controls}</div>
-        <button className="button full" onClick={() => setFiltersOpen(false)}>
+        <Button className="button full" onClick={() => setFiltersOpen(false)}>
           {t("Show", "Göster")}: {list.length} {t("materials", "ürün")}
           <ArrowRight size={18} />
-        </button>
+        </Button>
       </Modal>
     </div>
   );
@@ -680,7 +680,7 @@ export function Configurator({
             </p>
             <div>
               {p.tiers.map((tier) => (
-                <button
+                <Button
                   disabled={!ready}
                   className={
                     price.discountBps === tier.discountBps ? "selected" : ""
@@ -710,7 +710,7 @@ export function Configurator({
                       locale,
                     )}
                   </strong>
-                </button>
+                </Button>
               ))}
             </div>
           </div>
@@ -718,7 +718,7 @@ export function Configurator({
             <label>
               {t("Quantity (pieces)", "Miktar (adet)")}
               <div className="stepper">
-                <button
+                <Button
                   aria-label={t("Decrease quantity", "Miktarı azalt")}
                   disabled={quantity <= minimum}
                   onClick={() =>
@@ -726,7 +726,7 @@ export function Configurator({
                   }
                 >
                   <Minus size={15} />
-                </button>
+                </Button>
                 <input
                   aria-label={t("Quantity", "Miktar")}
                   type="number"
@@ -737,13 +737,13 @@ export function Configurator({
                   value={quantity}
                   onChange={(e) => setQuantity(Number(e.target.value))}
                 />
-                <button
+                <Button
                   aria-label={t("Increase quantity", "Miktarı artır")}
                   disabled={quantity >= v.demoCapacity}
                   onClick={() => setQuantity((q) => q + multiple)}
                 >
                   <Plus size={15} />
-                </button>
+                </Button>
               </div>
             </label>
             <div className="price-total">
@@ -767,14 +767,14 @@ export function Configurator({
                   `${quantity / v.pack} paket × ${v.pack} adet · örnek MOQ ${p.moq}`,
                 )}
           </p>
-          <button
+          <Button
             className="button full add-to-cart"
             disabled={!ready || !!err || quantity % v.pack !== 0}
             onClick={() => add({ productId: p.id, variantId: v.id, quantity })}
           >
             {t("Add to wholesale cart", "Toptan sepete ekle")}
             <ArrowRight size={18} />
-          </button>
+          </Button>
         </>
       ) : (
         <div className="price-gate">
@@ -805,14 +805,14 @@ export function Configurator({
             </A>
           )}
           {demo && (
-            <button
+            <Button
               className="button secondary full"
               disabled={!ready}
               onClick={buyerDemo}
             >
               {t("Explore Buyer Demo", "Müşteri demosunu keşfet")}
               <Arrow />
-            </button>
+            </Button>
           )}
           <A
             className="text-link"
@@ -853,7 +853,7 @@ export function ProductDetail({ product: p }: { product: Product }) {
       />
       <div className="product-detail">
         <div className="product-gallery">
-          <button
+          <Button
             className="gallery-main"
             onClick={() => setZoom(true)}
             aria-label={t("Enlarge product photo", "Ürün görselini büyüt")}
@@ -869,17 +869,17 @@ export function ProductDetail({ product: p }: { product: Product }) {
             <span className="image-index">
               0{image + 1} / 0{p.images.length}
             </span>
-          </button>
+          </Button>
           <div className="gallery-thumbs">
             {p.images.map((im, n) => (
-              <button
+              <Button
                 key={n}
                 onClick={() => setImage(n)}
                 className={n === image ? "active" : ""}
                 aria-label={`${t("Photo", "Görsel")} ${n + 1}`}
               >
                 <Photo src={im.src} alt={im.alt} sizes="100px" />
-              </button>
+              </Button>
             ))}
             <p>
               {t(
@@ -983,13 +983,13 @@ export function ProductDetail({ product: p }: { product: Product }) {
         </div>
         <div className="lightbox-nav">
           {p.images.map((_, n) => (
-            <button
+            <Button
               key={n}
               className="button secondary"
               onClick={() => setImage(n)}
             >
               {n + 1}
-            </button>
+            </Button>
           ))}
         </div>
       </Modal>

@@ -1,5 +1,6 @@
 import handler from "vinext/server/fetch-handler";
 import { ensureSeed } from "../src/edge/seed";
+import { withDatabase } from "../src/edge/db";
 
 const worker = {
   async fetch(
@@ -7,8 +8,10 @@ const worker = {
     env: { DB: D1Database; DEMO_ADMIN_PASSWORD?: string },
     ctx: ExecutionContext,
   ) {
-    await ensureSeed(env);
-    return handler.fetch(request, env, ctx);
+    return withDatabase(env.DB, async () => {
+      await ensureSeed(env);
+      return handler.fetch(request, env, ctx);
+    });
   },
 };
 export default worker;

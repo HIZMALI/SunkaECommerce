@@ -12,7 +12,7 @@ export function A({
 }: Omit<ComponentProps<typeof Link>, "href"> & { href: string }) {
   const store = useStore();
   return (
-    <Link href={store.href(href)} {...props}>
+    <Link prefetch={false} href={store.href(href)} {...props}>
       {children}
     </Link>
   );
@@ -43,6 +43,10 @@ export function Photo({
 }
 export function Arrow() {
   return <ArrowUpRight size={18} strokeWidth={1.6} />;
+}
+export function Button({ disabled, ...props }: ComponentProps<"button">) {
+  const { ready } = useStore();
+  return <button {...props} disabled={!ready || disabled} />;
 }
 export function Modal({
   open,
