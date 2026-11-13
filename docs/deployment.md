@@ -4,6 +4,8 @@ Uygulama Next.js sunucusu, HTTP-only oturumlar ve SQLite yazma erişimi gerektir
 
 ## Hazır yapılandırma
 
+13 Kasım 2026 tarihinde kontrol edilen [Render fiyatlandırmasına](https://render.com/pricing) göre bu servisin taban maliyeti 7 USD/ay compute + 0,25 USD/ay disk = **7,25 USD/ay**; vergi, kota aşımı ve mevcut hesap kullanımından kaynaklanan ek ücretler ayrıca olabilir. Hobby workspace yükseltmesi gerekmez. Kart doğrulaması geçici 1 USD provizyon gösterebilir. Dağıtım sırasında Render ekranındaki güncel tutar esas alınır.
+
 Kökteki `render.yaml`, `main` dalını kullanan **0.5 CPU / 512 MB Node web servisi + 1 GB kalıcı disk** tanımlar. Bu ücretli kaynakları oluşturur; dosyayı commit etmek tek başına ücret veya dağıtım başlatmaz. Render ekranındaki güncel fiyatı gözden geçirin. Otomatik dağıtım kapalıdır; yeni sürümü elle dağıtın.
 
 1. Render → New → Blueprint → `HIZMALI/SunkaECommerce` public deposunu seçin. Dal `main`, dosya `render.yaml`.

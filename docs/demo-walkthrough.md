@@ -22,7 +22,7 @@ Open **Custom Solutions / Request a custom quote**. Choose a cornerboard family,
 
 ## 4:15–5:45 · Run the business view
 
-Open `/login` and sign in as `admin@sunka.demo` / `SunkaDemo!2026`. Dashboard numbers are labelled sample data. Open **Orders** and update a status; expand a row for the saved line configurations and addresses. Open **Quote requests**, find the new RFQ, set **IN_REVIEW**, write an explicitly demo response and save. Refresh to show persistence. Under **Product catalogue**, edit a sample price or visibility and save; show the storefront update. Restore the sample price when finished.
+Open `/login` and sign in as `admin@sunka.demo`. For a **local** installation, the sample password is `SunkaDemo!2026`; for the **hosted sandbox**, use the separately generated `DEMO_ADMIN_PASSWORD` secret supplied privately by the presenter. Dashboard numbers are labelled sample data. Open **Orders** and update a status; expand a row for the saved line configurations and addresses. Open **Quote requests**, find the new RFQ, set **IN_REVIEW**, write an explicitly demo response and save. Refresh to show persistence. Under **Product catalogue**, edit a sample price or visibility and save; show the storefront update. Restore the sample price when finished.
 
 ## 5:45–6:45 · Approval and responsibility
 

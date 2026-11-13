@@ -17,7 +17,7 @@ Actual workspace: `D:\Projects\SunkaECommerce`. Branch: `main`. Application serv
 | `npm run build` | Passed; optimized Next.js App Router build |
 | `npm run test:e2e` | **9 passed**, final local Chromium run on optimized server, 38.1 seconds |
 | `node scripts/check-hosted.mjs` | Passed against a disposable database: runtime migration/seed, separate admin secret, HTTP-only session, health/guide and restart persistence |
-| `node scripts/link-audit.mjs` | **52 internal links checked; 0 failures** |
+| `node scripts/link-audit.mjs` | **53 internal links checked; 0 failures**, including the customer guide |
 | `node scripts/final-visual-qa.mjs` | Completed; no page/console errors or failed images in captured views |
 | `npm audit --audit-level=moderate` | **0 vulnerabilities** |
 
