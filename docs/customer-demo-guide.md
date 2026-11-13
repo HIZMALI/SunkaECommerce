@@ -1,6 +1,6 @@
 # Müşteri için deneme yönergesi
 
-Kurulum gerekmez. [Canlı demoyu açın](https://sunka-wholesale-studio.morveteknofest.chatgpt.site) veya [Türkçe deneme rehberine doğrudan gidin](https://sunka-wholesale-studio.morveteknofest.chatgpt.site/demo-guide?lang=tr). Üst banttaki **B2B DEMO · TRY IT** bağlantısı da İngilizce/Türkçe çalışan rehberi açar. Telefondan aynı adres kullanılabilir.
+Kurulum gerekmez. [Canlı demoyu açın](https://sunka-larton-wholesale.netlify.app) veya [Türkçe deneme rehberine doğrudan gidin](https://sunka-larton-wholesale.netlify.app/demo-guide?lang=tr). Üst banttaki **B2B DEMO · TRY IT** bağlantısı da İngilizce/Türkçe çalışan rehberi açar. Telefondan aynı adres kullanılabilir.
 
 ## 5–7 dakikalık deneme
 
@@ -19,4 +19,4 @@ Kurulum gerekmez. [Canlı demoyu açın](https://sunka-wholesale-studio.morvetek
 - Resmi fotoğraflar ve ürün aileleri gerçektir. Fiyat, SKU, ölçü, MOQ, paket ve kapasite değerleri örnektir.
 - Yönetici şifresi public depoda veya müşteri rehberinde paylaşılmaz. Yerel örnek yönetici şifresi, yayındaki yönetici şifresi değildir.
 
-Uygulama Sites + kalıcı D1 veritabanında çalışır. GitHub kod deposunu barındırır; müşteri uygulamayı yukarıdaki canlı adresten kullanır.
+Uygulama Netlify + kalıcı PostgreSQL veritabanında çalışır. GitHub kod deposunu barındırır; müşteri uygulamayı yukarıdaki canlı adresten kullanır. Ücretsiz plan aylık kotayla sınırlıdır; kota dolarsa yayın sonraki döneme kadar durabilir.

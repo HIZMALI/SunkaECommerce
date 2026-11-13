@@ -13,6 +13,8 @@ export default defineConfig([
     "next-env.d.ts",
     "dist/**",
     ".wrangler/**",
+    ".netlify/**",
+    "outputs/**",
     "src/generated/**",
   ]),
 ]);

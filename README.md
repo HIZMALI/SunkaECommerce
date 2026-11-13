@@ -6,9 +6,9 @@ Müşteri toplantıları için, gerçek resmi ürün fotoğraflarıyla geliştir
 
 ## Uzaktan müşteri demosu
 
-**Canlı demo:** [Sun-Ka Wholesale Studio](https://sunka-wholesale-studio.morveteknofest.chatgpt.site). **Müşteriye gönderilecek rehber:** [Demo nasıl denenir?](https://sunka-wholesale-studio.morveteknofest.chatgpt.site/demo-guide?lang=tr)
+**Canlı demo:** [Sun-Ka Wholesale Studio](https://sunka-larton-wholesale.netlify.app). **Müşteriye gönderilecek rehber:** [Demo nasıl denenir?](https://sunka-larton-wholesale.netlify.app/demo-guide?lang=tr)
 
-Kaynak depo: [HIZMALI/SunkaECommerce](https://github.com/HIZMALI/SunkaECommerce). Ücretsiz yayın **Sites + Cloudflare D1** üzerindedir; Render aboneliği oluşturulmadı. [Yayın ve yerel Worker yönergesi](docs/deployment.md).
+Kaynak depo: [HIZMALI/SunkaECommerce](https://github.com/HIZMALI/SunkaECommerce). Ücretsiz yayın **Netlify + kalıcı PostgreSQL** üzerindedir; ücretli abonelik oluşturulmadı. [Yayın yönergesi](docs/deployment.md).
 
 Müşteri için [5–7 dakikalık deneme yönergesi](docs/customer-demo-guide.md) ve uygulamada **`/demo-guide`** sayfası vardır. Header'daki **B2B DEMO · TRY IT** bağlantısıyla açılır. Tek tıkla onaylı müşteri demosuna geçilebilir. Public demo ortak örnek kayıtlar kullanır; yalnız hayali bilgiler girilmelidir.
 
@@ -61,7 +61,7 @@ Seed bu yerel hesapları yalnızca `DEMO_MODE=true` ve `NODE_ENV` production de�
 
 Next.js 16.4 App Router, React 19, strict TypeScript, Tailwind CSS 4 + özgün CSS tasarım sistemi, Radix Dialog, Lucide, yerel Manrope/Instrument Serif fontları, Zod, Prisma 6.19 + SQLite, Playwright/Chromium, Vitest. Prisma 6.19, SQLite ve basit yerel Windows kurulumunu korumak için sabitlendi. Güncel Next sürümü resmi dokümantasyondan kontrol edildi; gereksiz animasyon bağımlılığı eklenmedi.
 
-Ücretsiz yayın hedefi aynı arayüzü **Vinext 1.4 + Cloudflare Workers/D1** üzerinde çalıştırır. Yerel Next/SQLite hedefi korunur. D1 adapter'ında eksik olan transaction desteği kritik yazma işlemleri için D1 transactional batch ile sağlanır. `npm run build` iki hedefi de derler; `npm run test:worker` ayrı Worker tarayıcı paketidir.
+Müşteriye açık yayın **Next.js + Netlify Functions + PostgreSQL** kullanır. Yerel Next/SQLite hedefi ve önceki Vinext/Cloudflare Worker adapter'ı korunur. SQLite ve PostgreSQL istemcileri aynı Prisma modellerinden üretilir; PostgreSQL'de sipariş ve başvuru işlemleri gerçek transaction kullanır. `npm run build:netlify` yayın hedefini, `npm run build` yerel ve alternatif Worker hedeflerini derler.
 
 - `src/components/`: storefront, commerce, form ve admin bileşenleri.
 - `src/lib/`: tek fiyat/miktar kuralı, DB, oturum, katalog, tipler, dil ve sepet deposu.

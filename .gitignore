@@ -24,3 +24,5 @@ dist/
 outputs/
 src/generated/
 prisma/edge.prisma
+prisma/postgres.prisma
+.netlify/

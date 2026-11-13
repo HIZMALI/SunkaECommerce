@@ -1,8 +1,8 @@
 import "dotenv/config";
-import { PrismaClient } from "@prisma/client";
+import { createDatabaseClient } from "../src/lib/database-client";
 import { hashPassword, verifyPassword } from "../src/lib/auth";
 import { demoSeedPolicy } from "../src/lib/seed-policy";
-const db = new PrismaClient();
+const db = createDatabaseClient();
 const categories = [
   [
     "cake-salmon-boards",

@@ -1,51 +1,44 @@
-# Ücretsiz müşteri yayını: Sites + Cloudflare D1
+# Ücretsiz müşteri yayını: Netlify + PostgreSQL
 
-Müşteri demosu Sites üzerinde yayımlanmak üzere hazırlanmıştır. Render aboneliği veya ücretli disk oluşturulmadı. GitHub Pages uygulamanın sunucu ve veritabanı işlemlerini çalıştıramadığı için kullanılmıyor. Public kaynak depo HIZMALI/SunkaECommerce, geliştirme dalı main olarak korunur.
+Müşteri adresi: https://sunka-larton-wholesale.netlify.app. Deneme rehberi: /demo-guide?lang=tr. Kaynak depo: https://github.com/HIZMALI/SunkaECommerce; çalışma dalı main. Bu yayın başka bir siteye yönlendiren proxy değildir: Next.js uygulaması Netlify Functions üzerinde, kayıtlar kalıcı Netlify PostgreSQL veritabanında çalışır.
 
-## İki çalışma hedefi
+## Ortamlar
 
-- Yerel: Next.js App Router + Prisma 6.19 native client + prisma/demo.db. Önceki npm run dev ve npm start akışı korunur.
-- Yayın: Aynı React/App Router sayfaları Vinext ile Cloudflare Worker'a derlenir. Prisma'nın Rust gerektirmeyen ESM istemcisi ve D1 adapter'ı, kalıcı SQLite tabanlı D1'e bağlanır.
+- Yerel: Next.js App Router + Prisma native client + SQLite. npm run db:setup ve npm run dev değişmedi; Docker veya uzak hesap gerekmez.
+- Müşteri yayını: aynı Next.js sayfaları + Netlify OpenNext adapter'ı + Prisma PostgreSQL adapter'ı. Modeller scripts/generate-postgres.mjs ile yerel Prisma şemasından türetilir; fiyat ve iş kuralları ortaktır.
+- Önceki Worker/D1 adapter'ı alternatif hedef olarak korunur; [yerel Worker yönergesi](deployment-worker.md). Müşteriye eski yayın adresi gönderilmez.
 
-npm run build iki hedefi de oluşturur; build:next ve build:site hedefleri ayrı çalıştırılabilir. Vite yalnızca yayın hedefinde DB ve çok kayıtlı yazma işlemlerini src/edge/ uyarlamasına yönlendirir. Yerel şema prisma/schema.prisma içinde kalır. D1 şeması db/schema.ts, üretilen ve incelenmiş migration'lar drizzle/ içindedir.
+## Veritabanı ve sırlar
 
-## Kalıcı kayıtlar ve atomik yazma
+Netlify Database'in otomatik NETLIFY_DB_URL bağlantısı kullanılır. DATABASE_PROVIDER=postgresql, DEMO_MODE=true, APP_ENV=demo, ALLOW_HOSTED_DEMO_SEED=true, COOKIE_SECURE=true, APP_URL=https://sunka-larton-wholesale.netlify.app ve ayrı DEMO_ADMIN_PASSWORD gereklidir. Yönetici parolası en az 20 karakterdir; public depo ve istemci paketine konmaz. .env.netlify yerel yönetim dosyasıdır ve Git tarafından dışlanır. Yerel yönetici parolası yayında kullanılmaz.
 
-Sites, .openai/hosting.json içindeki DB binding'ini sağlar ve migration'ları dağıtım sırasında uygular. D1 process belleği veya geçici dosya değildir; sipariş, teklif, başvuru ve yönetici değişiklikleri ayrı ziyaretlerde korunur. Yerel SQLite dosyası sunucuya yüklenmez.
+prisma/postgresql/migrations sürümlü SQL içerir. npm run db:setup:postgres her migration'ı transaction ve advisory lock altında bir kez uygular; checksum kontrolü uygulanmış SQL'in sessizce değiştirilmesini engeller. Şema normal HTTP isteklerinde değiştirilmez. Sipariş/satırlar, başvuru/kullanıcı ve ürün/fiyat kademeleri gerçek PostgreSQL transaction'larıyla kaydedilir. Fiyat, rol, MOQ ve paket kuralları sunucuda yeniden kontrol edilir.
 
-Prisma D1 adapter'ı transactions sağlamadığından sipariş + satırlar, firma + kullanıcı + başvuru, ürün + fiyat kademeleri ve başvuru + hesap rolü değişikliği D1 transactional batch ile kaydedilir. Fiyat/miktar kuralları ortak pricing.ts / catalog.ts kodunu kullanır. Sunucu istemcinin gönderdiği fiyatı kabul etmez.
+Seed tekrarlanabilir; var olan ürün düzenlemeleri ve kayıtlar korunur. Önceki demodan aktarım tablo verilerini taşır; eski oturumlar taşınmaz. Yönetici için yeni hosted demo parolası atanır. Veri dosyaları ve bağlantı sırları depoya eklenmez.
 
-Worker, Prisma istemcisini AsyncLocalStorage üzerinden her HTTP isteğine ayrı bağlar. D1 I/O'su yapan bekleyen Promise'lar veya Prisma istemcileri farklı istekler arasında paylaşılmaz; iptal edilen bir istek sonrakileri bekletmemelidir. Link ön yüklemesi kapalıdır; gezinme kullanıcı tıkladığında başlar. Etkileşimli düğmeler hydration tamamlanana kadar devre dışıdır. Bu kurallar gerçek yayın testinde görülen iptal/erken tıklama sorunlarını önlemek içindir.
+Netlify başlangıçta CLI/PAT araçlarına üretim veritabanında salt okunur erişim verir. İlk aktarım için kullanıcı tarafından onaylanan geçici yazma izni kullanılır; aktarım tamamlanınca tekrar kapatılır. Uygulamanın kendi veritabanı binding'i bu yönetim izninden ayrıdır.
 
-Yalnızca temiz kurulumdan çıkarılmış hayali seed verileri src/edge/seed-data.json içindedir. Çalışma veritabanındaki QA/kullanıcı kayıtları taşınmaz. Yönetici hash'i bu dosyada yoktur; ilk kurulumda Sites secret'ından üretilir. Sabit örnek ID'ler, INSERT OR IGNORE ve migration-owned SeedState kaydı mevcut düzenlemelerin sonraki açılışlarda sıfırlanmasını engeller. Şema request sırasında oluşturulmaz/değiştirilmez.
+## Build ve yayın
 
-## Runtime ayarları
-
-Sites ortamında DEMO_MODE=true, APP_ENV=demo, COOKIE_SECURE=true, APP_URL=<public HTTPS origin> ve gizli DEMO_ADMIN_PASSWORD kullanılır. Yönetici parolası en az 20 karakterdir; public depo, istemci paketi ve hosting manifest'inde bulunmaz. Yerel SunkaDemo!2026 şifresi yayında geçerli değildir. Yerel .env, .dev.vars, DB ve araç çıktıları git'e alınmaz.
-
-Müşteri hesabı: buyer@sunka.demo / BuyerDemo!2026. Bekleyen örnek hesap: pending@sunka.demo / PendingDemo!2026. Bunlar ortak hayali demo kimlikleridir. Gerçek kişisel bilgi girilmemelidir. Yönetici parolası sunumu yapan kişiyle özel olarak paylaşılır.
-
-## Worker'ı yerelde denemek
+netlify.toml build komutunu npm run build:netlify, çıktı klasörünü .next olarak tanımlar. Build sırası: PostgreSQL istemcisi → migration → idempotent demo seed → Next.js production build. Netlify'nin Next.js adapter'ı sunucu fonksiyonları ve statik varlıkları paketler.
 
 ```powershell
 npm install
-npm run build:site
-npm run db:setup:site
-npm run start:site
+# Hosted ortam değişkenleri yalnız Netlify'de veya Git dışında .env.netlify içinde:
+npm run build:netlify
+npx netlify-cli deploy --prod
 ```
 
-Önizleme: http://127.0.0.1:8787. Setup gerekirse .dev.vars.example dosyasını .dev.vars olarak kopyalar ve yerel D1 migration'larını uygular. Yerel Worker verisi .wrangler/commerce içinde korunur. Önizleme yöneticisinin şifresi .dev.vars.example içindedir; hosted yönetici için kullanılmaz.
+Yalnız başarılı deploy kaydı yayınlandığında ve oturumsuz tarayıcı HTTPS adresini açabildiğinde yayın tamamlanmış sayılır. Public erişim yeni projelerde ayrıca açılır. Site ID'si tek başına müşteri erişimi için yeterli değildir. GitHub main kaynak kodunu barındırır; CLI ile yapılan yayınlar manuel güncellenir.
 
-```powershell
-npm run test:worker
-```
+## Doğrulama
 
-Testler tamamen hayali kayıtlar oluşturur. WORKER_BASE_URL farklı origin'e yönlendirebilir; hosted yönetici secret'ı terminal argümanlarına veya repoya konmaz. scripts/run-worker-tests.mjs test ayarlarını gizli stdin üzerinden alır.
+Lint, TypeScript, unit test, yerel SQLite/Next build ve e2e korunur. Aynı kapsamlı tarayıcı paketi yeni HTTPS adresinde giriş, varyant/kademe, sepet yenileme, sipariş/hesap/yeniden sipariş, RFQ, yönetici düzenleme ve başvuru onayını doğrular. Testler yalnız hayali bilgiler oluşturur. scripts/run-worker-tests.mjs adı tarihsel olsa da uzak Next.js hedefinde aynı akışları çalıştırır; yönetici ayarları gizli stdin'den alınır.
 
-## Yayın süreci ve sınırlar
+Yayın sonrası mevcut bir sipariş kimliği scripts/check-deployment-persistence.mjs ile yeni tarayıcı oturumunda tekrar açılır. İkinci deploydan sonra da aynı kaydın görünmesi kontrol edilir. Son gerçek sonuçlar [QA raporundadır](qa-report.md).
 
-Sites skill'i üzerinden build, kaynak senkronizasyonu ve artifact paketleme yapılır. Native save/deploy sonucu doğrulanmadan bir URL yayınlanmış sayılmaz. Müşteri erişimi public olarak ayarlanmıştır; ChatGPT oturumu gerekmez. Güncellemeler manuel yayınlanır. Her yeni sürüm mevcut D1 verisini korur; migration geçmişi değiştirilmez.
+## Ücretsiz plan sınırları
 
-Bu ücretsiz demo yolu işletme için SLA veya sınırsız trafik taahhüdü değildir. Sites kullanım ve platform sınırlarına tabidir. Gerçek ticaret için katalog, fiyat, güvenlik, yedekleme ve operasyon planı ayrıca ele alınmalıdır. render.yaml kullanılmayan ücretli Node alternatifi olarak tutulmuştur; otomatik dağıtımı kapalıdır.
+Netlify Free aylık 300 kredi ve sert kullanım limiti sağlar; otomatik ücretlendirme yoktur. Üretim deployları, trafik, fonksiyon ve veritabanı kullanımı bu kotayı tüketir. Kota dolunca yayın durabilir. Veritabanı hareketsizlikte uyuyabilir; ilk erişim daha yavaş olabilir. Bu, SLA taahhütlü gerçek ticaret barındırması değildir. Kart, ücretli Render servisi veya özel alan adı satın alınmadı.
 
-Kaynaklar: [Vinext](https://github.com/cloudflare/vinext), [Prisma D1 sınırları](https://www.prisma.io/docs/orm/v6/overview/databases/cloudflare-d1), [D1 batch](https://developers.cloudflare.com/d1/worker-api/d1-database/#batch), [Prisma ESM istemcisi](https://www.prisma.io/docs/orm/v6/prisma-schema/overview/generators).
+Kaynaklar: [Netlify planları](https://www.netlify.com/pricing/), [Next.js desteği](https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/), [Netlify Database](https://docs.netlify.com/build/data-and-storage/netlify-database/), [veritabanı erişimi](https://docs.netlify.com/build/data-and-storage/netlify-database/access-control/).
