@@ -6,12 +6,17 @@ import {
   createSession,
   DEMO,
   getUser,
-  hashPassword,
   logout,
   verifyPassword,
 } from "@/lib/auth";
 import { canPrice } from "@/lib/pricing";
 import { reprice } from "@/lib/catalog";
+import {
+  recordOrder,
+  recordApplication,
+  saveProduct,
+  reviewApplication,
+} from "@/lib/mutations";
 export const dynamic = "force-dynamic";
 const str = (min = 1, max = 200) => z.string().trim().min(min).max(max);
 const email = z
@@ -171,30 +176,7 @@ export async function POST(
         if (previous.userId !== user.id) throw new Error("AUTH");
         return NextResponse.json({ id: previous.id });
       }
-      const result = await db.$transaction(async (tx) => {
-        const priced = await reprice(input, tx);
-        return tx.order.create({
-          data: {
-            ...data,
-            id: `DEMO-${Date.now().toString(36).toUpperCase()}-${randomUUID().slice(0, 4).toUpperCase()}`,
-            userId: user.id,
-            totalCents: priced.totalCents,
-            items: {
-              create: priced.items.map((i) => ({
-                productId: i.productId,
-                variantId: i.variantId,
-                title: i.title,
-                titleTr: i.titleTr,
-                variantLabel: i.variantLabel,
-                image: i.image,
-                quantity: i.quantity,
-                unitCents: i.unitCents,
-                totalCents: i.totalCents,
-              })),
-            },
-          },
-        });
-      });
+      const result = await recordOrder(user.id, data, input);
       return NextResponse.json({ id: result.id }, { status: 201 });
     }
     if (action === "quotes") {
@@ -250,33 +232,7 @@ export async function POST(
           .regex(/[0-9]/)
           .parse(data.password);
       const { password, ...application } = data;
-      const result = await db.$transaction(async (tx) => {
-        const account =
-          user ??
-          (await tx.user.create({
-            data: {
-              email: data.email,
-              name: data.name,
-              passwordHash: hashPassword(password!),
-              role: "PENDING_BUYER",
-              company: {
-                create: {
-                  name: data.company,
-                  country: data.country,
-                  phone: data.phone,
-                },
-              },
-            },
-          }));
-        const pending = await tx.wholesaleApplication.findFirst({
-          where: { userId: account.id, status: "PENDING" },
-        });
-        if (pending) return { id: pending.id, userId: account.id };
-        const row = await tx.wholesaleApplication.create({
-          data: { ...application, userId: account.id },
-        });
-        return { id: row.id, userId: account.id };
-      });
+      const result = await recordApplication(user, application, password);
       if (!user) await createSession(result.userId);
       return NextResponse.json({ id: result.id }, { status: 201 });
     }
@@ -337,13 +293,7 @@ export async function POST(
       )
         throw new Error("PACK");
       const { id, tiers, ...fields } = data;
-      await db.$transaction([
-        db.product.update({ where: { id }, data: fields }),
-        db.pricingTier.deleteMany({ where: { productId: id } }),
-        db.pricingTier.createMany({
-          data: tiers.map((t) => ({ ...t, productId: id })),
-        }),
-      ]);
+      await saveProduct(id, fields, tiers);
       return NextResponse.json({ ok: true });
     }
     if (action === "admin/order") {
@@ -380,21 +330,7 @@ export async function POST(
           status: z.enum(["PENDING", "APPROVED", "REJECTED"]),
         })
         .parse(body);
-      await db.$transaction(async (tx) => {
-        const a = await tx.wholesaleApplication.update({
-          where: { id: data.id },
-          data: { status: data.status },
-        });
-        const u = await tx.user.findUniqueOrThrow({ where: { id: a.userId } });
-        if (u.role !== "ADMIN")
-          await tx.user.update({
-            where: { id: a.userId },
-            data: {
-              role:
-                data.status === "APPROVED" ? "APPROVED_BUYER" : "PENDING_BUYER",
-            },
-          });
-      });
+      await reviewApplication(data.id, data.status);
       return NextResponse.json({ ok: true });
     }
     return NextResponse.json({ error: "Not found" }, { status: 404 });

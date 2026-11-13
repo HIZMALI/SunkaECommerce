@@ -13,4 +13,14 @@ docs/research/*.html
 *.tsbuildinfo
 test-results/
 playwright-report/
+playwright-report-worker/
 *.log
+dist/
+.wrangler/
+.vinext/
+.sites-runtime/
+.dev.vars*
+!.dev.vars.example
+outputs/
+src/generated/
+prisma/edge.prisma

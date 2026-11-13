@@ -1,0 +1,2021 @@
+[
+  [
+    "Category",
+    [
+      {
+        "id": "cake-salmon-boards",
+        "title": "Cake & Salmon Boards",
+        "titleTr": "Pasta ve Somon Altlıkları",
+        "description": "Presentation starts with the right foundation. Explore die-cut, flower-cut and salmon boards.",
+        "descriptionTr": "Doğru sunum, doğru altlıkla başlar. Kesimli pasta ve somon altlıklarını keşfedin.",
+        "image": "/images/cake-die-cut.webp"
+      },
+      {
+        "id": "presentation-boards",
+        "title": "Specialty Presentation Boards",
+        "titleTr": "Özel Sunum Altlıkları",
+        "description": "Small formats. Considered details. Boards for individual portions and retail presentation.",
+        "descriptionTr": "Tek porsiyon ve perakende sunumları için özenle tasarlanmış küçük formatlar.",
+        "image": "/images/mono-portion.webp"
+      },
+      {
+        "id": "cornerboards",
+        "title": "Cornerboards",
+        "titleTr": "Karton Köşebentler",
+        "description": "Paper-based edge protection in profiles adapted to your packaging process.",
+        "descriptionTr": "Ambalaj sürecinize uyarlanabilen, kâğıt bazlı kenar koruma profilleri.",
+        "image": "/images/corner-kraft.webp"
+      },
+      {
+        "id": "cardboard",
+        "title": "Cardboard",
+        "titleTr": "Mukavva",
+        "description": "From natural grey to bright metallic finishes: a versatile material platform.",
+        "descriptionTr": "Doğal gri tonlardan parlak metalize yüzeylere, çok yönlü mukavva çözümleri.",
+        "image": "/images/card-metalised.webp"
+      },
+      {
+        "id": "grey-board-reels",
+        "title": "Grey Board Reels",
+        "titleTr": "Gri Karton Bobinler",
+        "description": "Grey board coils and slit reels for converting and industrial applications.",
+        "descriptionTr": "Dönüştürme ve endüstriyel uygulamalar için gri karton ve dilimlenmiş bobinler.",
+        "image": "/images/reel-coil.webp"
+      }
+    ]
+  ],
+  [
+    "Product",
+    [
+      {
+        "id": "p01",
+        "slug": "die-cut-round-boards",
+        "sku": "SK-SAMPLE-001",
+        "title": "Die Cut Round Boards",
+        "titleTr": "Yuvarlak Kesimli Pasta Altlığı",
+        "description": "Die Cut Round Boards for bakery, food and retail presentation. Explore the sample configuration or request a format tailored to your application.",
+        "descriptionTr": "Yuvarlak Kesimli Pasta Altlığı; pastane, gıda ve perakende sunumları için. Örnek yapılandırmayı inceleyin veya kullanımınıza özel bir format talep edin.",
+        "categoryId": "cake-salmon-boards",
+        "subcategory": "Die Cut Boards",
+        "industry": "Food & Retail",
+        "saleMode": "STANDARD_ORDER",
+        "visible": true,
+        "baseCents": 68,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.913Z"
+      },
+      {
+        "id": "p02",
+        "slug": "die-cut-mixed-finish-boards",
+        "sku": "SK-SAMPLE-002",
+        "title": "Die Cut Boards — Mixed Finishes",
+        "titleTr": "Kesimli Pasta Altlığı — Farklı Yüzeyler",
+        "description": "Die Cut Boards — Mixed Finishes for bakery, food and retail presentation. Explore the sample configuration or request a format tailored to your application.",
+        "descriptionTr": "Kesimli Pasta Altlığı — Farklı Yüzeyler; pastane, gıda ve perakende sunumları için. Örnek yapılandırmayı inceleyin veya kullanımınıza özel bir format talep edin.",
+        "categoryId": "cake-salmon-boards",
+        "subcategory": "Die Cut Boards",
+        "industry": "Food & Retail",
+        "saleMode": "STANDARD_ORDER",
+        "visible": true,
+        "baseCents": 74,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.922Z"
+      },
+      {
+        "id": "p03",
+        "slug": "flower-cut-board",
+        "sku": "SK-SAMPLE-003",
+        "title": "Flower Cut Board",
+        "titleTr": "Çiçek Kesim Pasta Altlığı",
+        "description": "Flower Cut Board for bakery, food and retail presentation. Explore the sample configuration or request a format tailored to your application.",
+        "descriptionTr": "Çiçek Kesim Pasta Altlığı; pastane, gıda ve perakende sunumları için. Örnek yapılandırmayı inceleyin veya kullanımınıza özel bir format talep edin.",
+        "categoryId": "cake-salmon-boards",
+        "subcategory": "Flower Cut Board",
+        "industry": "Food & Retail",
+        "saleMode": "STANDARD_ORDER",
+        "visible": true,
+        "baseCents": 82,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.929Z"
+      },
+      {
+        "id": "p04",
+        "slug": "salmon-board",
+        "sku": "SK-SAMPLE-004",
+        "title": "Salmon Board",
+        "titleTr": "Somon Altlığı",
+        "description": "Salmon Board for bakery, food and retail presentation. Explore the sample configuration or request a format tailored to your application.",
+        "descriptionTr": "Somon Altlığı; pastane, gıda ve perakende sunumları için. Örnek yapılandırmayı inceleyin veya kullanımınıza özel bir format talep edin.",
+        "categoryId": "cake-salmon-boards",
+        "subcategory": "Salmon Board",
+        "industry": "Food & Retail",
+        "saleMode": "STANDARD_ORDER",
+        "visible": true,
+        "baseCents": 92,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.935Z"
+      },
+      {
+        "id": "p05",
+        "slug": "mono-portion-round-boards",
+        "sku": "SK-SAMPLE-005",
+        "title": "Round Mono Portion Boards",
+        "titleTr": "Yuvarlak Tek Porsiyon Altlık",
+        "description": "Round Mono Portion Boards for bakery, food and retail presentation. Explore the sample configuration or request a format tailored to your application.",
+        "descriptionTr": "Yuvarlak Tek Porsiyon Altlık; pastane, gıda ve perakende sunumları için. Örnek yapılandırmayı inceleyin veya kullanımınıza özel bir format talep edin.",
+        "categoryId": "presentation-boards",
+        "subcategory": "Single-Serve Mono Portion Boards",
+        "industry": "Food & Retail",
+        "saleMode": "STANDARD_ORDER",
+        "visible": true,
+        "baseCents": 29,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.942Z"
+      },
+      {
+        "id": "p06",
+        "slug": "mono-portion-rectangular-boards",
+        "sku": "SK-SAMPLE-006",
+        "title": "Rectangular Mono Portion Boards",
+        "titleTr": "Dikdörtgen Tek Porsiyon Altlık",
+        "description": "Rectangular Mono Portion Boards for bakery, food and retail presentation. Explore the sample configuration or request a format tailored to your application.",
+        "descriptionTr": "Dikdörtgen Tek Porsiyon Altlık; pastane, gıda ve perakende sunumları için. Örnek yapılandırmayı inceleyin veya kullanımınıza özel bir format talep edin.",
+        "categoryId": "presentation-boards",
+        "subcategory": "Single-Serve Mono Portion Boards",
+        "industry": "Food & Retail",
+        "saleMode": "STANDARD_ORDER",
+        "visible": true,
+        "baseCents": 32,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.948Z"
+      },
+      {
+        "id": "p07",
+        "slug": "white-moisture-resistant-cornerboard",
+        "sku": "SK-SAMPLE-007",
+        "title": "White Moisture Resistant Cornerboard",
+        "titleTr": "Beyaz Neme Dayanıklı Köşebent",
+        "description": "White Moisture Resistant Cornerboard for packaging and logistics. Discuss profile dimensions and application requirements with the team before specifying a production order.",
+        "descriptionTr": "Beyaz Neme Dayanıklı Köşebent; ambalaj ve lojistik süreçleri için. Üretim siparişinden önce profil ölçülerini ve uygulama gereksinimlerini ekiple netleştirin.",
+        "categoryId": "cornerboards",
+        "subcategory": "Cornerboard",
+        "industry": "Packaging & Logistics",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 120,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.955Z"
+      },
+      {
+        "id": "p08",
+        "slug": "kraft-cornerboard",
+        "sku": "SK-SAMPLE-008",
+        "title": "Kraft (Paper) Cornerboard",
+        "titleTr": "Kraft Karton Köşebent",
+        "description": "Kraft (Paper) Cornerboard for packaging and logistics. Discuss profile dimensions and application requirements with the team before specifying a production order.",
+        "descriptionTr": "Kraft Karton Köşebent; ambalaj ve lojistik süreçleri için. Üretim siparişinden önce profil ölçülerini ve uygulama gereksinimlerini ekiple netleştirin.",
+        "categoryId": "cornerboards",
+        "subcategory": "Cornerboard",
+        "industry": "Packaging & Logistics",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 110,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.961Z"
+      },
+      {
+        "id": "p09",
+        "slug": "oval-cornerboard",
+        "sku": "SK-SAMPLE-009",
+        "title": "Oval Cornerboard",
+        "titleTr": "Oval Köşebent",
+        "description": "Oval Cornerboard for packaging and logistics. Discuss profile dimensions and application requirements with the team before specifying a production order.",
+        "descriptionTr": "Oval Köşebent; ambalaj ve lojistik süreçleri için. Üretim siparişinden önce profil ölçülerini ve uygulama gereksinimlerini ekiple netleştirin.",
+        "categoryId": "cornerboards",
+        "subcategory": "Cornerboard",
+        "industry": "Packaging & Logistics",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 130,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.968Z"
+      },
+      {
+        "id": "p10",
+        "slug": "u-profile-cornerboard",
+        "sku": "SK-SAMPLE-010",
+        "title": "U Profile Cornerboard",
+        "titleTr": "U Profil Köşebent",
+        "description": "U Profile Cornerboard for packaging and logistics. Discuss profile dimensions and application requirements with the team before specifying a production order.",
+        "descriptionTr": "U Profil Köşebent; ambalaj ve lojistik süreçleri için. Üretim siparişinden önce profil ölçülerini ve uygulama gereksinimlerini ekiple netleştirin.",
+        "categoryId": "cornerboards",
+        "subcategory": "Cornerboard",
+        "industry": "Packaging & Logistics",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 140,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.976Z"
+      },
+      {
+        "id": "p11",
+        "slug": "notched-cornerboard",
+        "sku": "SK-SAMPLE-011",
+        "title": "Notched Cornerboard",
+        "titleTr": "Çentikli Köşebent",
+        "description": "Notched Cornerboard for packaging and logistics. Discuss profile dimensions and application requirements with the team before specifying a production order.",
+        "descriptionTr": "Çentikli Köşebent; ambalaj ve lojistik süreçleri için. Üretim siparişinden önce profil ölçülerini ve uygulama gereksinimlerini ekiple netleştirin.",
+        "categoryId": "cornerboards",
+        "subcategory": "Cornerboard",
+        "industry": "Packaging & Logistics",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 145,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.983Z"
+      },
+      {
+        "id": "p12",
+        "slug": "locked-cornerboard",
+        "sku": "SK-SAMPLE-012",
+        "title": "Locked Cornerboard",
+        "titleTr": "Kilitli Köşebent",
+        "description": "Locked Cornerboard for packaging and logistics. Discuss profile dimensions and application requirements with the team before specifying a production order.",
+        "descriptionTr": "Kilitli Köşebent; ambalaj ve lojistik süreçleri için. Üretim siparişinden önce profil ölçülerini ve uygulama gereksinimlerini ekiple netleştirin.",
+        "categoryId": "cornerboards",
+        "subcategory": "Cornerboard",
+        "industry": "Packaging & Logistics",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 150,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.990Z"
+      },
+      {
+        "id": "p13",
+        "slug": "self-adhesive-cornerboard",
+        "sku": "SK-SAMPLE-013",
+        "title": "Self-Adhesive Cornerboard",
+        "titleTr": "Kendinden Yapışkanlı Köşebent",
+        "description": "Self-Adhesive Cornerboard for packaging and logistics. Discuss profile dimensions and application requirements with the team before specifying a production order.",
+        "descriptionTr": "Kendinden Yapışkanlı Köşebent; ambalaj ve lojistik süreçleri için. Üretim siparişinden önce profil ölçülerini ve uygulama gereksinimlerini ekiple netleştirin.",
+        "categoryId": "cornerboards",
+        "subcategory": "Cornerboard",
+        "industry": "Packaging & Logistics",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 155,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:27.997Z"
+      },
+      {
+        "id": "p14",
+        "slug": "metalised-cardboard",
+        "sku": "SK-SAMPLE-014",
+        "title": "Metalised / Bright-Finish Cardboard",
+        "titleTr": "Metalize / Parlak Mukavva",
+        "description": "Metalised / Bright-Finish Cardboard for packaging, converting and presentation. Select a sample sheet format or discuss a made-to-order specification.",
+        "descriptionTr": "Metalize / Parlak Mukavva; ambalaj, dönüştürme ve sunum uygulamaları için. Örnek levha formatını seçin veya özel üretim talep edin.",
+        "categoryId": "cardboard",
+        "subcategory": "Cardboard",
+        "industry": "Manufacturing & Furniture",
+        "saleMode": "STANDARD_ORDER",
+        "visible": true,
+        "baseCents": 180,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:28.004Z"
+      },
+      {
+        "id": "p15",
+        "slug": "grey-cardboard",
+        "sku": "SK-SAMPLE-015",
+        "title": "Grey Cardboard",
+        "titleTr": "Gri Mukavva",
+        "description": "Grey Cardboard for packaging, converting and presentation. Select a sample sheet format or discuss a made-to-order specification.",
+        "descriptionTr": "Gri Mukavva; ambalaj, dönüştürme ve sunum uygulamaları için. Örnek levha formatını seçin veya özel üretim talep edin.",
+        "categoryId": "cardboard",
+        "subcategory": "Cardboard",
+        "industry": "Manufacturing & Furniture",
+        "saleMode": "STANDARD_ORDER",
+        "visible": true,
+        "baseCents": 110,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:28.012Z"
+      },
+      {
+        "id": "p16",
+        "slug": "white-cardboard",
+        "sku": "SK-SAMPLE-016",
+        "title": "White Cardboard",
+        "titleTr": "Beyaz Mukavva",
+        "description": "White Cardboard for packaging, converting and presentation. Select a sample sheet format or discuss a made-to-order specification.",
+        "descriptionTr": "Beyaz Mukavva; ambalaj, dönüştürme ve sunum uygulamaları için. Örnek levha formatını seçin veya özel üretim talep edin.",
+        "categoryId": "cardboard",
+        "subcategory": "Cardboard",
+        "industry": "Manufacturing & Furniture",
+        "saleMode": "STANDARD_ORDER",
+        "visible": true,
+        "baseCents": 130,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:28.019Z"
+      },
+      {
+        "id": "p17",
+        "slug": "black-cardboard",
+        "sku": "SK-SAMPLE-017",
+        "title": "Black Cardboard",
+        "titleTr": "Siyah Mukavva",
+        "description": "Black Cardboard for packaging, converting and presentation. Select a sample sheet format or discuss a made-to-order specification.",
+        "descriptionTr": "Siyah Mukavva; ambalaj, dönüştürme ve sunum uygulamaları için. Örnek levha formatını seçin veya özel üretim talep edin.",
+        "categoryId": "cardboard",
+        "subcategory": "Cardboard",
+        "industry": "Manufacturing & Furniture",
+        "saleMode": "STANDARD_ORDER",
+        "visible": true,
+        "baseCents": 140,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:28.026Z"
+      },
+      {
+        "id": "p18",
+        "slug": "testliner-kraftliner-cardboard",
+        "sku": "SK-SAMPLE-018",
+        "title": "Testliner & Kraftliner Cardboard",
+        "titleTr": "Testliner ve Kraftliner Mukavva",
+        "description": "Testliner & Kraftliner Cardboard for packaging, converting and presentation. Select a sample sheet format or discuss a made-to-order specification.",
+        "descriptionTr": "Testliner ve Kraftliner Mukavva; ambalaj, dönüştürme ve sunum uygulamaları için. Örnek levha formatını seçin veya özel üretim talep edin.",
+        "categoryId": "cardboard",
+        "subcategory": "Cardboard",
+        "industry": "Manufacturing & Furniture",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 120,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:28.032Z"
+      },
+      {
+        "id": "p19",
+        "slug": "colored-cardboard",
+        "sku": "SK-SAMPLE-019",
+        "title": "Colored Cardboard",
+        "titleTr": "Renkli Mukavva",
+        "description": "Colored Cardboard for packaging, converting and presentation. Select a sample sheet format or discuss a made-to-order specification.",
+        "descriptionTr": "Renkli Mukavva; ambalaj, dönüştürme ve sunum uygulamaları için. Örnek levha formatını seçin veya özel üretim talep edin.",
+        "categoryId": "cardboard",
+        "subcategory": "Cardboard",
+        "industry": "Manufacturing & Furniture",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 150,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:28.038Z"
+      },
+      {
+        "id": "p20",
+        "slug": "grey-board-coil",
+        "sku": "SK-SAMPLE-020",
+        "title": "Grey Board Coil",
+        "titleTr": "Gri Karton Bobin",
+        "description": "Grey Board Coil for converting and manufacturing. Width, thickness and winding requirements are confirmed through a custom quotation.",
+        "descriptionTr": "Gri Karton Bobin; dönüştürme ve üretim için. En, kalınlık ve sarım gereksinimleri özel teklifle netleştirilir.",
+        "categoryId": "grey-board-reels",
+        "subcategory": "Grey Board Reel",
+        "industry": "Manufacturing & Furniture",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 0,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:28.048Z"
+      },
+      {
+        "id": "p21",
+        "slug": "slitting-grey-board-reel",
+        "sku": "SK-SAMPLE-021",
+        "title": "Slitting Grey Board Reel",
+        "titleTr": "Dilimlenmiş Gri Karton Bobin",
+        "description": "Slitting Grey Board Reel for converting and manufacturing. Width, thickness and winding requirements are confirmed through a custom quotation.",
+        "descriptionTr": "Dilimlenmiş Gri Karton Bobin; dönüştürme ve üretim için. En, kalınlık ve sarım gereksinimleri özel teklifle netleştirilir.",
+        "categoryId": "grey-board-reels",
+        "subcategory": "Grey Board Reel",
+        "industry": "Manufacturing & Furniture",
+        "saleMode": "QUOTE_ONLY",
+        "visible": true,
+        "baseCents": 0,
+        "moq": 100,
+        "packMultiple": 50,
+        "specs": "{\"material\":\"Paperboard / Mukavva\",\"configuration\":\"Sample only / Yalnızca örnek\",\"origin\":\"Official Sun-Ka product family / Resmi Sun-Ka ürün ailesi\"}",
+        "sourceUrl": "https://www.sunkapaper.com/",
+        "updatedAt": "2026-11-13T13:55:28.055Z"
+      }
+    ]
+  ],
+  [
+    "ProductImage",
+    [
+      {
+        "id": "cmwf1hdm10000ftv8n9zg8gzx",
+        "productId": "p01",
+        "src": "/images/cake-die-cut.webp",
+        "alt": "Official Sun-Ka Die Cut Round Boards product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdm10001ftv8pcrq0x7k",
+        "productId": "p01",
+        "src": "/images/cake-round.webp",
+        "alt": "Sun-Ka Die Cut Round Boards family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdma0005ftv8wpldrih1",
+        "productId": "p02",
+        "src": "/images/cake-gold.webp",
+        "alt": "Official Sun-Ka Die Cut Boards — Mixed Finishes product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdma0006ftv8xaafxz4z",
+        "productId": "p02",
+        "src": "/images/cake-gold.webp",
+        "alt": "Sun-Ka Die Cut Boards — Mixed Finishes family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdmg000aftv83dgp6lry",
+        "productId": "p03",
+        "src": "/images/cake-flower.webp",
+        "alt": "Official Sun-Ka Flower Cut Board product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdmg000bftv869jb9xhx",
+        "productId": "p03",
+        "src": "/images/cake-flower-detail.webp",
+        "alt": "Sun-Ka Flower Cut Board family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdmn000fftv81lezjfqf",
+        "productId": "p04",
+        "src": "/images/salmon.webp",
+        "alt": "Official Sun-Ka Salmon Board product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdmn000gftv82ndoaany",
+        "productId": "p04",
+        "src": "/images/salmon-detail.webp",
+        "alt": "Sun-Ka Salmon Board family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdmu000kftv8cul9dkvp",
+        "productId": "p05",
+        "src": "/images/mono-portion.webp",
+        "alt": "Official Sun-Ka Round Mono Portion Boards product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdmu000lftv85ynbsol6",
+        "productId": "p05",
+        "src": "/images/mono-detail.webp",
+        "alt": "Sun-Ka Round Mono Portion Boards family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdn0000pftv8ur3igqx5",
+        "productId": "p06",
+        "src": "/images/mono-square.webp",
+        "alt": "Official Sun-Ka Rectangular Mono Portion Boards product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdn0000qftv853a4ozsq",
+        "productId": "p06",
+        "src": "/images/mono-detail.webp",
+        "alt": "Sun-Ka Rectangular Mono Portion Boards family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdn7000uftv8ihzsqxi1",
+        "productId": "p07",
+        "src": "/images/corner-white.webp",
+        "alt": "Official Sun-Ka White Moisture Resistant Cornerboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdn7000vftv84u2m6s76",
+        "productId": "p07",
+        "src": "/images/corner-white.webp",
+        "alt": "Sun-Ka White Moisture Resistant Cornerboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdnd000zftv8bbjzsmk5",
+        "productId": "p08",
+        "src": "/images/corner-kraft.webp",
+        "alt": "Official Sun-Ka Kraft (Paper) Cornerboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdnd0010ftv8yq9ks4y9",
+        "productId": "p08",
+        "src": "/images/corner-kraft-detail.webp",
+        "alt": "Sun-Ka Kraft (Paper) Cornerboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdnk0014ftv8rucoo1no",
+        "productId": "p09",
+        "src": "/images/corner-oval.webp",
+        "alt": "Official Sun-Ka Oval Cornerboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdnk0015ftv81cv3c4wl",
+        "productId": "p09",
+        "src": "/images/corner-oval.webp",
+        "alt": "Sun-Ka Oval Cornerboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdnr0019ftv826kwyobz",
+        "productId": "p10",
+        "src": "/images/corner-u.webp",
+        "alt": "Official Sun-Ka U Profile Cornerboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdnr001aftv83l2jrca5",
+        "productId": "p10",
+        "src": "/images/corner-u.webp",
+        "alt": "Sun-Ka U Profile Cornerboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdnz001eftv8pv50ea3g",
+        "productId": "p11",
+        "src": "/images/corner-notched.webp",
+        "alt": "Official Sun-Ka Notched Cornerboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdnz001fftv890yc9537",
+        "productId": "p11",
+        "src": "/images/corner-notched.webp",
+        "alt": "Sun-Ka Notched Cornerboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdo6001jftv80f9g8xlq",
+        "productId": "p12",
+        "src": "/images/corner-locked.webp",
+        "alt": "Official Sun-Ka Locked Cornerboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdo6001kftv8o4odi0zb",
+        "productId": "p12",
+        "src": "/images/corner-locked.webp",
+        "alt": "Sun-Ka Locked Cornerboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdod001oftv83bjvilgo",
+        "productId": "p13",
+        "src": "/images/corner-adhesive.webp",
+        "alt": "Official Sun-Ka Self-Adhesive Cornerboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdod001pftv8ml5dq8wl",
+        "productId": "p13",
+        "src": "/images/corner-adhesive.webp",
+        "alt": "Sun-Ka Self-Adhesive Cornerboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdok001tftv8rxq5o114",
+        "productId": "p14",
+        "src": "/images/card-metalised.webp",
+        "alt": "Official Sun-Ka Metalised / Bright-Finish Cardboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdok001uftv84lxbo6zk",
+        "productId": "p14",
+        "src": "/images/card-metalised-detail.webp",
+        "alt": "Sun-Ka Metalised / Bright-Finish Cardboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdor001yftv8rojz6uh1",
+        "productId": "p15",
+        "src": "/images/card-grey.webp",
+        "alt": "Official Sun-Ka Grey Cardboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdor001zftv8stiq82ni",
+        "productId": "p15",
+        "src": "/images/card-grey.webp",
+        "alt": "Sun-Ka Grey Cardboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdoy0023ftv80bh82ypk",
+        "productId": "p16",
+        "src": "/images/card-white.webp",
+        "alt": "Official Sun-Ka White Cardboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdoy0024ftv8ewpkhzw6",
+        "productId": "p16",
+        "src": "/images/card-white.webp",
+        "alt": "Sun-Ka White Cardboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdp50028ftv8q8uxe5lc",
+        "productId": "p17",
+        "src": "/images/card-black.webp",
+        "alt": "Official Sun-Ka Black Cardboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdp50029ftv8epc6msfi",
+        "productId": "p17",
+        "src": "/images/card-black.webp",
+        "alt": "Sun-Ka Black Cardboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdpc002dftv8u0lwzrg7",
+        "productId": "p18",
+        "src": "/images/card-kraft.webp",
+        "alt": "Official Sun-Ka Testliner & Kraftliner Cardboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdpc002eftv8ouviz8bw",
+        "productId": "p18",
+        "src": "/images/card-kraft.webp",
+        "alt": "Sun-Ka Testliner & Kraftliner Cardboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdpi002iftv818n7jmgn",
+        "productId": "p19",
+        "src": "/images/card-colored.webp",
+        "alt": "Official Sun-Ka Colored Cardboard product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdpi002jftv8e1w7zuzh",
+        "productId": "p19",
+        "src": "/images/card-colored.webp",
+        "alt": "Sun-Ka Colored Cardboard family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdps002nftv89uw1xzsr",
+        "productId": "p20",
+        "src": "/images/reel-coil.webp",
+        "alt": "Official Sun-Ka Grey Board Coil product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdps002oftv8b418etiv",
+        "productId": "p20",
+        "src": "/images/reel-coil.webp",
+        "alt": "Sun-Ka Grey Board Coil family detail",
+        "position": 1
+      },
+      {
+        "id": "cmwf1hdpz002sftv8h3nwftwr",
+        "productId": "p21",
+        "src": "/images/reel-slitting.webp",
+        "alt": "Official Sun-Ka Slitting Grey Board Reel product photograph",
+        "position": 0
+      },
+      {
+        "id": "cmwf1hdpz002tftv8dvsujbw9",
+        "productId": "p21",
+        "src": "/images/reel-slitting.webp",
+        "alt": "Sun-Ka Slitting Grey Board Reel family detail",
+        "position": 1
+      }
+    ]
+  ],
+  [
+    "ProductVariant",
+    [
+      {
+        "id": "p01-v1",
+        "productId": "p01",
+        "sku": "SK-SAMPLE-001-A",
+        "shape": "Round",
+        "size": "250 mm",
+        "finish": "Metalised",
+        "color": "Gold",
+        "thickness": "2 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p01-v2",
+        "productId": "p01",
+        "sku": "SK-SAMPLE-001-B",
+        "shape": "Round",
+        "size": "300 mm",
+        "finish": "Metalised",
+        "color": "Gold",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 18,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p01-v3",
+        "productId": "p01",
+        "sku": "SK-SAMPLE-001-C",
+        "shape": "Round",
+        "size": "250 mm",
+        "finish": "Matte",
+        "color": "Black",
+        "thickness": "2 mm",
+        "pack": 100,
+        "adjustmentCents": 10,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p02-v1",
+        "productId": "p02",
+        "sku": "SK-SAMPLE-002-A",
+        "shape": "Round",
+        "size": "250 mm",
+        "finish": "Metalised",
+        "color": "Silver",
+        "thickness": "2 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p02-v2",
+        "productId": "p02",
+        "sku": "SK-SAMPLE-002-B",
+        "shape": "Round",
+        "size": "300 mm",
+        "finish": "Metalised",
+        "color": "Silver",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 18,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p02-v3",
+        "productId": "p02",
+        "sku": "SK-SAMPLE-002-C",
+        "shape": "Round",
+        "size": "250 mm",
+        "finish": "Matte",
+        "color": "Black",
+        "thickness": "2 mm",
+        "pack": 100,
+        "adjustmentCents": 10,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p03-v1",
+        "productId": "p03",
+        "sku": "SK-SAMPLE-003-A",
+        "shape": "Flower",
+        "size": "250 mm",
+        "finish": "Metalised",
+        "color": "Gold",
+        "thickness": "2 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p03-v2",
+        "productId": "p03",
+        "sku": "SK-SAMPLE-003-B",
+        "shape": "Flower",
+        "size": "300 mm",
+        "finish": "Metalised",
+        "color": "Gold",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 18,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p03-v3",
+        "productId": "p03",
+        "sku": "SK-SAMPLE-003-C",
+        "shape": "Flower",
+        "size": "250 mm",
+        "finish": "Matte",
+        "color": "Black",
+        "thickness": "2 mm",
+        "pack": 100,
+        "adjustmentCents": 10,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p04-v1",
+        "productId": "p04",
+        "sku": "SK-SAMPLE-004-A",
+        "shape": "Rectangle",
+        "size": "250 mm",
+        "finish": "Metalised",
+        "color": "Gold",
+        "thickness": "2 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p04-v2",
+        "productId": "p04",
+        "sku": "SK-SAMPLE-004-B",
+        "shape": "Rectangle",
+        "size": "300 mm",
+        "finish": "Metalised",
+        "color": "Gold",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 18,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p04-v3",
+        "productId": "p04",
+        "sku": "SK-SAMPLE-004-C",
+        "shape": "Rectangle",
+        "size": "250 mm",
+        "finish": "Matte",
+        "color": "Black",
+        "thickness": "2 mm",
+        "pack": 100,
+        "adjustmentCents": 10,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p05-v1",
+        "productId": "p05",
+        "sku": "SK-SAMPLE-005-A",
+        "shape": "Round",
+        "size": "250 mm",
+        "finish": "Bright finish",
+        "color": "Gold",
+        "thickness": "2 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p05-v2",
+        "productId": "p05",
+        "sku": "SK-SAMPLE-005-B",
+        "shape": "Round",
+        "size": "300 mm",
+        "finish": "Bright finish",
+        "color": "Gold",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 18,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p05-v3",
+        "productId": "p05",
+        "sku": "SK-SAMPLE-005-C",
+        "shape": "Round",
+        "size": "250 mm",
+        "finish": "Matte",
+        "color": "Black",
+        "thickness": "2 mm",
+        "pack": 100,
+        "adjustmentCents": 10,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p06-v1",
+        "productId": "p06",
+        "sku": "SK-SAMPLE-006-A",
+        "shape": "Rectangle",
+        "size": "250 mm",
+        "finish": "Matte",
+        "color": "Black",
+        "thickness": "2 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p06-v2",
+        "productId": "p06",
+        "sku": "SK-SAMPLE-006-B",
+        "shape": "Rectangle",
+        "size": "300 mm",
+        "finish": "Matte",
+        "color": "Black",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 18,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p06-v3",
+        "productId": "p06",
+        "sku": "SK-SAMPLE-006-C",
+        "shape": "Rectangle",
+        "size": "250 mm",
+        "finish": "Matte",
+        "color": "Black",
+        "thickness": "2 mm",
+        "pack": 100,
+        "adjustmentCents": 10,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p07-v1",
+        "productId": "p07",
+        "sku": "SK-SAMPLE-007-A",
+        "shape": "L profile",
+        "size": "50 × 50 × 1000 mm",
+        "finish": "Moisture resistant",
+        "color": "White",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p07-v2",
+        "productId": "p07",
+        "sku": "SK-SAMPLE-007-B",
+        "shape": "L profile",
+        "size": "60 × 60 × 1200 mm",
+        "finish": "Moisture resistant",
+        "color": "White",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p08-v1",
+        "productId": "p08",
+        "sku": "SK-SAMPLE-008-A",
+        "shape": "L profile",
+        "size": "50 × 50 × 1000 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p08-v2",
+        "productId": "p08",
+        "sku": "SK-SAMPLE-008-B",
+        "shape": "L profile",
+        "size": "60 × 60 × 1200 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p09-v1",
+        "productId": "p09",
+        "sku": "SK-SAMPLE-009-A",
+        "shape": "Oval",
+        "size": "50 × 50 × 1000 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p09-v2",
+        "productId": "p09",
+        "sku": "SK-SAMPLE-009-B",
+        "shape": "Oval",
+        "size": "60 × 60 × 1200 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p10-v1",
+        "productId": "p10",
+        "sku": "SK-SAMPLE-010-A",
+        "shape": "U profile",
+        "size": "50 × 50 × 1000 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p10-v2",
+        "productId": "p10",
+        "sku": "SK-SAMPLE-010-B",
+        "shape": "U profile",
+        "size": "60 × 60 × 1200 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p11-v1",
+        "productId": "p11",
+        "sku": "SK-SAMPLE-011-A",
+        "shape": "Notched",
+        "size": "50 × 50 × 1000 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p11-v2",
+        "productId": "p11",
+        "sku": "SK-SAMPLE-011-B",
+        "shape": "Notched",
+        "size": "60 × 60 × 1200 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p12-v1",
+        "productId": "p12",
+        "sku": "SK-SAMPLE-012-A",
+        "shape": "Locked",
+        "size": "50 × 50 × 1000 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p12-v2",
+        "productId": "p12",
+        "sku": "SK-SAMPLE-012-B",
+        "shape": "Locked",
+        "size": "60 × 60 × 1200 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p13-v1",
+        "productId": "p13",
+        "sku": "SK-SAMPLE-013-A",
+        "shape": "L profile",
+        "size": "50 × 50 × 1000 mm",
+        "finish": "Self-adhesive",
+        "color": "Kraft",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p13-v2",
+        "productId": "p13",
+        "sku": "SK-SAMPLE-013-B",
+        "shape": "L profile",
+        "size": "60 × 60 × 1200 mm",
+        "finish": "Self-adhesive",
+        "color": "Kraft",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p14-v1",
+        "productId": "p14",
+        "sku": "SK-SAMPLE-014-A",
+        "shape": "Sheet",
+        "size": "700 × 1000 mm",
+        "finish": "Bright finish",
+        "color": "Gold",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p14-v2",
+        "productId": "p14",
+        "sku": "SK-SAMPLE-014-B",
+        "shape": "Sheet",
+        "size": "800 × 1200 mm",
+        "finish": "Bright finish",
+        "color": "Gold",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p15-v1",
+        "productId": "p15",
+        "sku": "SK-SAMPLE-015-A",
+        "shape": "Sheet",
+        "size": "700 × 1000 mm",
+        "finish": "Natural",
+        "color": "Grey",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p15-v2",
+        "productId": "p15",
+        "sku": "SK-SAMPLE-015-B",
+        "shape": "Sheet",
+        "size": "800 × 1200 mm",
+        "finish": "Natural",
+        "color": "Grey",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p16-v1",
+        "productId": "p16",
+        "sku": "SK-SAMPLE-016-A",
+        "shape": "Sheet",
+        "size": "700 × 1000 mm",
+        "finish": "Matte",
+        "color": "White",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p16-v2",
+        "productId": "p16",
+        "sku": "SK-SAMPLE-016-B",
+        "shape": "Sheet",
+        "size": "800 × 1200 mm",
+        "finish": "Matte",
+        "color": "White",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p17-v1",
+        "productId": "p17",
+        "sku": "SK-SAMPLE-017-A",
+        "shape": "Sheet",
+        "size": "700 × 1000 mm",
+        "finish": "Matte",
+        "color": "Black",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p17-v2",
+        "productId": "p17",
+        "sku": "SK-SAMPLE-017-B",
+        "shape": "Sheet",
+        "size": "800 × 1200 mm",
+        "finish": "Matte",
+        "color": "Black",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p18-v1",
+        "productId": "p18",
+        "sku": "SK-SAMPLE-018-A",
+        "shape": "Sheet",
+        "size": "700 × 1000 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p18-v2",
+        "productId": "p18",
+        "sku": "SK-SAMPLE-018-B",
+        "shape": "Sheet",
+        "size": "800 × 1200 mm",
+        "finish": "Natural",
+        "color": "Kraft",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p19-v1",
+        "productId": "p19",
+        "sku": "SK-SAMPLE-019-A",
+        "shape": "Sheet",
+        "size": "700 × 1000 mm",
+        "finish": "Matte",
+        "color": "Colored",
+        "thickness": "3 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p19-v2",
+        "productId": "p19",
+        "sku": "SK-SAMPLE-019-B",
+        "shape": "Sheet",
+        "size": "800 × 1200 mm",
+        "finish": "Matte",
+        "color": "Colored",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p20-v1",
+        "productId": "p20",
+        "sku": "SK-SAMPLE-020-A",
+        "shape": "Coil",
+        "size": "500 mm width",
+        "finish": "Natural",
+        "color": "Grey",
+        "thickness": "1.5 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p20-v2",
+        "productId": "p20",
+        "sku": "SK-SAMPLE-020-B",
+        "shape": "Coil",
+        "size": "600 mm width",
+        "finish": "Natural",
+        "color": "Grey",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p21-v1",
+        "productId": "p21",
+        "sku": "SK-SAMPLE-021-A",
+        "shape": "Slit reel",
+        "size": "500 mm width",
+        "finish": "Natural",
+        "color": "Grey",
+        "thickness": "1.5 mm",
+        "pack": 50,
+        "adjustmentCents": 0,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p21-v2",
+        "productId": "p21",
+        "sku": "SK-SAMPLE-021-B",
+        "shape": "Slit reel",
+        "size": "600 mm width",
+        "finish": "Natural",
+        "color": "Grey",
+        "thickness": "4 mm",
+        "pack": 50,
+        "adjustmentCents": 30,
+        "demoCapacity": 10000
+      },
+      {
+        "id": "p01-v4",
+        "productId": "p01",
+        "sku": "SK-SAMPLE-001-D",
+        "shape": "Square",
+        "size": "250 × 250 mm",
+        "finish": "Metalised",
+        "color": "Gold",
+        "thickness": "2 mm",
+        "pack": 50,
+        "adjustmentCents": 22,
+        "demoCapacity": 10000
+      }
+    ]
+  ],
+  [
+    "PricingTier",
+    [
+      {
+        "id": "cmwf1hdm10002ftv87iun9oa1",
+        "productId": "p01",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdm10003ftv82hmw0d5i",
+        "productId": "p01",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdm10004ftv80p9n3hvc",
+        "productId": "p01",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdma0007ftv851mh8rrt",
+        "productId": "p02",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdma0008ftv8hzd1kplt",
+        "productId": "p02",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdma0009ftv8vb8z5321",
+        "productId": "p02",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdmh000cftv88wzztasg",
+        "productId": "p03",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdmh000dftv8uz7o3srn",
+        "productId": "p03",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdmh000eftv8g21b085j",
+        "productId": "p03",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdmn000hftv8g9kupx6f",
+        "productId": "p04",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdmn000iftv8w99oq078",
+        "productId": "p04",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdmn000jftv8pgekwubj",
+        "productId": "p04",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdmu000mftv89hjarpuw",
+        "productId": "p05",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdmu000nftv8s1jdfd37",
+        "productId": "p05",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdmu000oftv8othc36x6",
+        "productId": "p05",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdn0000rftv8olqq49el",
+        "productId": "p06",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdn0000sftv8tilogzj3",
+        "productId": "p06",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdn0000tftv89nt3s6gq",
+        "productId": "p06",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdn7000wftv8t8krptsl",
+        "productId": "p07",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdn7000xftv821hn8mqw",
+        "productId": "p07",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdn7000yftv8u5fz7vy0",
+        "productId": "p07",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdnd0011ftv88kar5w61",
+        "productId": "p08",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdnd0012ftv86k889qs0",
+        "productId": "p08",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdnd0013ftv8desvfcny",
+        "productId": "p08",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdnk0016ftv80mzi129m",
+        "productId": "p09",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdnk0017ftv84dxrie2e",
+        "productId": "p09",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdnk0018ftv8weec0yaw",
+        "productId": "p09",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdnr001bftv8w9vt3jn5",
+        "productId": "p10",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdnr001cftv8g9rgfi4j",
+        "productId": "p10",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdnr001dftv8kf0sdl96",
+        "productId": "p10",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdnz001gftv8fns7ytxc",
+        "productId": "p11",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdnz001hftv89irb7170",
+        "productId": "p11",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdnz001iftv83cx5rz87",
+        "productId": "p11",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdo6001lftv8vzvpd37j",
+        "productId": "p12",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdo6001mftv8il5lpdt3",
+        "productId": "p12",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdo6001nftv8kwgczdly",
+        "productId": "p12",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdod001qftv8v7xna49w",
+        "productId": "p13",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdod001rftv8bkvubw9c",
+        "productId": "p13",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdod001sftv8q31fs3a9",
+        "productId": "p13",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdok001vftv8hc9amrsk",
+        "productId": "p14",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdok001wftv8qsep0awi",
+        "productId": "p14",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdok001xftv8aq8mvggs",
+        "productId": "p14",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdos0020ftv88mv7crbg",
+        "productId": "p15",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdos0021ftv8mjy34y1f",
+        "productId": "p15",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdos0022ftv8fzynyunw",
+        "productId": "p15",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdoy0025ftv8vvlv2tx1",
+        "productId": "p16",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdoy0026ftv8ztirx9f3",
+        "productId": "p16",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdoy0027ftv81jzaumdk",
+        "productId": "p16",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdp6002aftv8clt6e389",
+        "productId": "p17",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdp6002bftv83e26xspt",
+        "productId": "p17",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdp6002cftv8mzjupe7k",
+        "productId": "p17",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdpc002fftv8wwncxkvj",
+        "productId": "p18",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdpc002gftv8gbrgu2yr",
+        "productId": "p18",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdpc002hftv8i5h1slwm",
+        "productId": "p18",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdpi002kftv8vrkvbbwy",
+        "productId": "p19",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdpi002lftv8vj6oytmq",
+        "productId": "p19",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdpi002mftv8egna9rht",
+        "productId": "p19",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdps002pftv8140plr9e",
+        "productId": "p20",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdps002qftv8mzrzhivd",
+        "productId": "p20",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdps002rftv8u1wsn7a9",
+        "productId": "p20",
+        "minQty": 1000,
+        "discountBps": 1500
+      },
+      {
+        "id": "cmwf1hdpz002uftv8mkkxvm5a",
+        "productId": "p21",
+        "minQty": 100,
+        "discountBps": 0
+      },
+      {
+        "id": "cmwf1hdpz002vftv8lfzaxm87",
+        "productId": "p21",
+        "minQty": 500,
+        "discountBps": 800
+      },
+      {
+        "id": "cmwf1hdpz002wftv884tf1wts",
+        "productId": "p21",
+        "minQty": 1000,
+        "discountBps": 1500
+      }
+    ]
+  ],
+  [
+    "Company",
+    [
+      {
+        "id": "cmwf1hdrs002yftv8tweif5ck",
+        "name": "Sun-Ka Demo Team",
+        "country": "United States",
+        "address": "100 Sample Avenue, Demo City (fictional)",
+        "phone": "+1 555 010 2026"
+      },
+      {
+        "id": "cmwf1hdtc0030ftv85xrfc454",
+        "name": "Studio Bakery · Sample Company",
+        "country": "United States",
+        "address": "100 Sample Avenue, Demo City (fictional)",
+        "phone": "+1 555 010 2026"
+      },
+      {
+        "id": "cmwf1hduz0032ftv8kijbp53r",
+        "name": "Paper & Co. · Sample Company",
+        "country": "United States",
+        "address": "100 Sample Avenue, Demo City (fictional)",
+        "phone": "+1 555 010 2026"
+      }
+    ]
+  ],
+  [
+    "User",
+    [
+      {
+        "id": "cmwf1hdrr002xftv871weudzb",
+        "email": "admin@sunka.demo",
+        "name": "Demo Administrator",
+        "passwordHash": null,
+        "role": "ADMIN",
+        "companyId": "cmwf1hdrs002yftv8tweif5ck"
+      },
+      {
+        "id": "cmwf1hdtc002zftv8vuwm77c0",
+        "email": "buyer@sunka.demo",
+        "name": "Alex Morgan",
+        "passwordHash": "45fffb8c90e5d13493abb336df8aba66:0c3b067c73a5fc5ca06a05042766a844ef91ca984f04c104125fbfcf44b33ed45eea9125a42ef25a41362a1caefad847cf54085e50a5653b04f7106f1015a586",
+        "role": "APPROVED_BUYER",
+        "companyId": "cmwf1hdtc0030ftv85xrfc454"
+      },
+      {
+        "id": "cmwf1hduz0031ftv8ka0dydfn",
+        "email": "pending@sunka.demo",
+        "name": "Deniz Kaya",
+        "passwordHash": "1a583ddd7607c275df0884cd9ffc680f:fc15af462eca268386aca4e555c459e76473ba6baab4d0bd393eef44eaca07c2f2c85be0a255482fefa5c87466e394ed6d7018b7cc6357845c9a9a8acc18be44",
+        "role": "PENDING_BUYER",
+        "companyId": "cmwf1hduz0032ftv8kijbp53r"
+      }
+    ]
+  ],
+  [
+    "WholesaleApplication",
+    [
+      {
+        "id": "cmwf1hdvu0035ftv8rg354voc",
+        "userId": "cmwf1hduz0031ftv8ka0dydfn",
+        "company": "Paper & Co. · Sample Company",
+        "name": "Deniz Kaya",
+        "email": "pending@sunka.demo",
+        "phone": "+1 555 010 2027",
+        "country": "Türkiye",
+        "businessType": "Distributor",
+        "monthlyVolume": "1000–5000 pcs",
+        "interests": "Cornerboards",
+        "notes": "Seed application",
+        "status": "PENDING",
+        "createdAt": "2026-11-13T13:55:28.267Z"
+      },
+      {
+        "id": "cmwf1hdvu0036ftv8o2zo667z",
+        "userId": "cmwf1hdtc002zftv8vuwm77c0",
+        "company": "Studio Bakery · Sample Company",
+        "name": "Alex Morgan",
+        "email": "buyer@sunka.demo",
+        "phone": "+1 555 010 2026",
+        "country": "United States",
+        "businessType": "Bakery",
+        "monthlyVolume": "1000–5000 pcs",
+        "interests": "Cake boards",
+        "notes": "Seed application",
+        "status": "APPROVED",
+        "createdAt": "2026-11-13T13:55:28.267Z"
+      }
+    ]
+  ],
+  [
+    "Order",
+    [
+      {
+        "id": "DEMO-2026-0001",
+        "userId": "cmwf1hdtc002zftv8vuwm77c0",
+        "company": "Studio Bakery · Sample Company",
+        "name": "Alex Morgan",
+        "email": "buyer@sunka.demo",
+        "phone": "+1 555 010 2026",
+        "country": "United States",
+        "shippingAddress": "100 Sample Avenue, Demo City (fictional)",
+        "billingAddress": "100 Sample Avenue, Demo City (fictional)",
+        "notes": "Seed sample — no production or delivery.",
+        "status": "RECORDED",
+        "currency": "USD",
+        "totalCents": 34000,
+        "idempotencyKey": "seed-1",
+        "createdAt": "2026-11-13T13:55:28.243Z"
+      },
+      {
+        "id": "DEMO-2026-0002",
+        "userId": "cmwf1hdtc002zftv8vuwm77c0",
+        "company": "Studio Bakery · Sample Company",
+        "name": "Alex Morgan",
+        "email": "buyer@sunka.demo",
+        "phone": "+1 555 010 2026",
+        "country": "United States",
+        "shippingAddress": "100 Sample Avenue, Demo City (fictional)",
+        "billingAddress": "100 Sample Avenue, Demo City (fictional)",
+        "notes": "Seed sample — no production or delivery.",
+        "status": "IN_REVIEW",
+        "currency": "USD",
+        "totalCents": 34000,
+        "idempotencyKey": "seed-2",
+        "createdAt": "2026-11-13T13:55:28.247Z"
+      }
+    ]
+  ],
+  [
+    "OrderItem",
+    [
+      {
+        "id": "cmwf1hdv60033ftv8fjse53rh",
+        "orderId": "DEMO-2026-0001",
+        "productId": "p01",
+        "variantId": "p01-v1",
+        "title": "Die Cut Round Boards",
+        "titleTr": "Yuvarlak Kesimli Pasta Altlığı",
+        "variantLabel": "Round · 250 mm · Metalised · 2 mm · 50 pcs/pack (sample)",
+        "image": "/images/cake-die-cut.webp",
+        "quantity": 500,
+        "unitCents": 68,
+        "totalCents": 34000
+      },
+      {
+        "id": "cmwf1hdvb0034ftv8o53skdmb",
+        "orderId": "DEMO-2026-0002",
+        "productId": "p01",
+        "variantId": "p01-v1",
+        "title": "Die Cut Round Boards",
+        "titleTr": "Yuvarlak Kesimli Pasta Altlığı",
+        "variantLabel": "Round · 250 mm · Metalised · 2 mm · 50 pcs/pack (sample)",
+        "image": "/images/cake-die-cut.webp",
+        "quantity": 500,
+        "unitCents": 68,
+        "totalCents": 34000
+      }
+    ]
+  ],
+  [
+    "QuoteRequest",
+    [
+      {
+        "id": "RFQ-SAMPLE-001",
+        "userId": "cmwf1hdtc002zftv8vuwm77c0",
+        "family": "Cornerboards",
+        "application": "Packaging sample project",
+        "shape": "L profile",
+        "dimensions": "Custom sample dimensions",
+        "thickness": "To be discussed",
+        "finish": "Natural",
+        "quantity": 2000,
+        "country": "United States",
+        "company": "Studio Bakery · Sample Company",
+        "name": "Alex Morgan",
+        "email": "buyer@sunka.demo",
+        "phone": "+1 555 010 2026",
+        "notes": "Seed sample enquiry. No email was sent.",
+        "status": "NEW",
+        "response": "",
+        "createdAt": "2026-11-13T13:55:28.252Z"
+      },
+      {
+        "id": "RFQ-SAMPLE-002",
+        "userId": "cmwf1hdtc002zftv8vuwm77c0",
+        "family": "Cardboard",
+        "application": "Packaging sample project",
+        "shape": "Sheet",
+        "dimensions": "Custom sample dimensions",
+        "thickness": "To be discussed",
+        "finish": "Natural",
+        "quantity": 2000,
+        "country": "United States",
+        "company": "Studio Bakery · Sample Company",
+        "name": "Alex Morgan",
+        "email": "buyer@sunka.demo",
+        "phone": "+1 555 010 2026",
+        "notes": "Seed sample enquiry. No email was sent.",
+        "status": "IN_REVIEW",
+        "response": "",
+        "createdAt": "2026-11-13T13:55:28.257Z"
+      },
+      {
+        "id": "RFQ-SAMPLE-003",
+        "userId": "cmwf1hdtc002zftv8vuwm77c0",
+        "family": "Grey Board Reels",
+        "application": "Packaging sample project",
+        "shape": "Sheet",
+        "dimensions": "Custom sample dimensions",
+        "thickness": "To be discussed",
+        "finish": "Natural",
+        "quantity": 2000,
+        "country": "United States",
+        "company": "Studio Bakery · Sample Company",
+        "name": "Alex Morgan",
+        "email": "buyer@sunka.demo",
+        "phone": "+1 555 010 2026",
+        "notes": "Seed sample enquiry. No email was sent.",
+        "status": "RESPONDED",
+        "response": "Demo response: specification discussion recorded. No commercial offer has been issued.",
+        "createdAt": "2026-11-13T13:55:28.261Z"
+      }
+    ]
+  ]
+]

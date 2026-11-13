@@ -6,7 +6,7 @@ Müşteri toplantıları için, gerçek resmi ürün fotoğraflarıyla geliştir
 
 ## Uzaktan müşteri demosu
 
-Kaynak depo: [HIZMALI/SunkaECommerce](https://github.com/HIZMALI/SunkaECommerce). Çalışan sunucu adresi dağıtım doğrulanınca burada paylaşılacaktır. GitHub Pages sunucu/SQLite çalıştırmadığından yayın için Render Node + kalıcı disk yapılandırması hazırdır: [yayın yönergesi](docs/deployment.md).
+Kaynak depo: [HIZMALI/SunkaECommerce](https://github.com/HIZMALI/SunkaECommerce). Çalışan sunucu adresi dağıtım doğrulanınca burada paylaşılacaktır. Ücretsiz yayın için **Sites + Cloudflare D1** uyarlaması hazırdır; Render aboneliği oluşturulmadı. [Yayın ve yerel Worker yönergesi](docs/deployment.md).
 
 Müşteri için [5–7 dakikalık deneme yönergesi](docs/customer-demo-guide.md) ve uygulamada **`/demo-guide`** sayfası vardır. Header'daki **B2B DEMO · TRY IT** bağlantısıyla açılır. Tek tıkla onaylı müşteri demosuna geçilebilir. Public demo ortak örnek kayıtlar kullanır; yalnız hayali bilgiler girilmelidir.
 
@@ -58,6 +58,8 @@ Seed bu yerel hesapları yalnızca `DEMO_MODE=true` ve `NODE_ENV` production de�
 ## Teknoloji ve yapı
 
 Next.js 16.4 App Router, React 19, strict TypeScript, Tailwind CSS 4 + özgün CSS tasarım sistemi, Radix Dialog, Lucide, yerel Manrope/Instrument Serif fontları, Zod, Prisma 6.19 + SQLite, Playwright/Chromium, Vitest. Prisma 6.19, SQLite ve basit yerel Windows kurulumunu korumak için sabitlendi. Güncel Next sürümü resmi dokümantasyondan kontrol edildi; gereksiz animasyon bağımlılığı eklenmedi.
+
+Ücretsiz yayın hedefi aynı arayüzü **Vinext 1.4 + Cloudflare Workers/D1** üzerinde çalıştırır. Yerel Next/SQLite hedefi korunur. D1 adapter'ında eksik olan transaction desteği kritik yazma işlemleri için D1 transactional batch ile sağlanır. `npm run build` iki hedefi de derler; `npm run test:worker` ayrı Worker tarayıcı paketidir.
 
 - `src/components/`: storefront, commerce, form ve admin bileşenleri.
 - `src/lib/`: tek fiyat/miktar kuralı, DB, oturum, katalog, tipler, dil ve sepet deposu.

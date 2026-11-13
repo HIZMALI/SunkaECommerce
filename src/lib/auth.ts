@@ -5,7 +5,7 @@ import {
   timingSafeEqual,
 } from "node:crypto";
 import { cookies } from "next/headers";
-import { db } from "./db";
+import { db } from "@/lib/db";
 export const DEMO = process.env.DEMO_MODE === "true";
 export function hashPassword(password: string) {
   const salt = randomBytes(16).toString("hex");

@@ -1,30 +1,49 @@
-# GitHub + Render yayınlama
+# Ücretsiz müşteri yayını: Sites + Cloudflare D1
 
-Uygulama Next.js sunucusu, HTTP-only oturumlar ve SQLite yazma erişimi gerektirir. GitHub Pages bu sunucuyu çalıştıramaz. Public GitHub deposu kaynak kodu barındırır; çalışan müşteri demosu Render Node web servisi üzerinde çalışır.
+Müşteri demosu Sites üzerinde yayımlanmak üzere hazırlanmıştır. Render aboneliği veya ücretli disk oluşturulmadı. GitHub Pages uygulamanın sunucu ve veritabanı işlemlerini çalıştıramadığı için kullanılmıyor. Public kaynak depo HIZMALI/SunkaECommerce, geliştirme dalı main olarak korunur.
 
-## Hazır yapılandırma
+## İki çalışma hedefi
 
-13 Kasım 2026 tarihinde kontrol edilen [Render fiyatlandırmasına](https://render.com/pricing) göre bu servisin taban maliyeti 7 USD/ay compute + 0,25 USD/ay disk = **7,25 USD/ay**; vergi, kota aşımı ve mevcut hesap kullanımından kaynaklanan ek ücretler ayrıca olabilir. Hobby workspace yükseltmesi gerekmez. Kart doğrulaması geçici 1 USD provizyon gösterebilir. Dağıtım sırasında Render ekranındaki güncel tutar esas alınır.
+- Yerel: Next.js App Router + Prisma 6.19 native client + prisma/demo.db. Önceki npm run dev ve npm start akışı korunur.
+- Yayın: Aynı React/App Router sayfaları Vinext ile Cloudflare Worker'a derlenir. Prisma'nın Rust gerektirmeyen ESM istemcisi ve D1 adapter'ı, kalıcı SQLite tabanlı D1'e bağlanır.
 
-Kökteki `render.yaml`, `main` dalını kullanan **0.5 CPU / 512 MB Node web servisi + 1 GB kalıcı disk** tanımlar. Bu ücretli kaynakları oluşturur; dosyayı commit etmek tek başına ücret veya dağıtım başlatmaz. Render ekranındaki güncel fiyatı gözden geçirin. Otomatik dağıtım kapalıdır; yeni sürümü elle dağıtın.
+npm run build iki hedefi de oluşturur; build:next ve build:site hedefleri ayrı çalıştırılabilir. Vite yalnızca yayın hedefinde DB ve çok kayıtlı yazma işlemlerini src/edge/ uyarlamasına yönlendirir. Yerel şema prisma/schema.prisma içinde kalır. D1 şeması db/schema.ts, üretilen ve incelenmiş migration'lar drizzle/ içindedir.
 
-1. Render → New → Blueprint → `HIZMALI/SunkaECommerce` public deposunu seçin. Dal `main`, dosya `render.yaml`.
-2. 0.5 CPU / 512 MB servis, Frankfurt ve 1 GB diski inceleyip dağıtımı başlatın. Kurumsal canlı ticaret yerine ayrı bir **demo sandbox** kurulmaktadır.
-3. Build: `npm ci --include=dev && npm run build`. Başlatma: `npm run start:hosted`. SQLite `/var/data/sunka-demo.db` içindedir; disk uygulama yeniden başlarken korunur.
-4. `RENDER_EXTERNAL_URL` Render tarafından sağlanır. Yerel `APP_URL=http://127.0.0.1:3000` değerini hosted ortama taşımayın. Özel alan adı kullanılırsa HTTPS origin'i `APP_URL` olarak ayarlayın.
-5. Yönetici: `admin@sunka.demo`. Şifre Render'ın oluşturduğu **DEMO_ADMIN_PASSWORD** secret'ıdır; yalnız sunumu yapan kişiyle özel olarak paylaşın. Müşteri hesabı rehberdeki ortak örnek hesaptır.
-6. `/api/health` 200 dönmeli. `/demo-guide` açılmalı. Müşteri girişi → sipariş → RFQ → admin görünürlüğü doğrulanmalı. Servisi yeniden başlatıp kayıtların korunduğunu kontrol edin.
+## Kalıcı kayıtlar ve atomik yazma
 
-## Veritabanı ve hesap sınırları
+Sites, .openai/hosting.json içindeki DB binding'ini sağlar ve migration'ları dağıtım sırasında uygular. D1 process belleği veya geçici dosya değildir; sipariş, teklif, başvuru ve yönetici değişiklikleri ayrı ziyaretlerde korunur. Yerel SQLite dosyası sunucuya yüklenmez.
 
-Kalıcı disk build/pre-deploy aşamasına bağlı olmadığından migration ve idempotent seed **başlatma sırasında**, Next sunucusundan önce çalışır. Her boot veriyi sıfırlamaz; düzenlemeleri ve müşteri denemelerini korur. SQLite ile tek servis örneği kullanılır. Gerçek müşteri verisi saklanmaz.
+Prisma D1 adapter'ı transactions sağlamadığından sipariş + satırlar, firma + kullanıcı + başvuru, ürün + fiyat kademeleri ve başvuru + hesap rolü değişikliği D1 transactional batch ile kaydedilir. Fiyat/miktar kuralları ortak pricing.ts / catalog.ts kodunu kullanır. Sunucu istemcinin gönderdiği fiyatı kabul etmez.
 
-Normal production seed'i demo hesap oluşturmaz. Hosted deneme bunun için üç açık opt-in kullanır: `APP_ENV=demo`, `DEMO_MODE=true`, `ALLOW_HOSTED_DEMO_SEED=true`. Bunlara ek olarak yerel şifreden farklı, en az 20 karakterli `DEMO_ADMIN_PASSWORD` zorunludur. Eksik/hatalı durumda seed kapanır. Yönetici secret'ı değişirse seed hash'i günceller ve mevcut yönetici oturumlarını iptal eder. Gerçek canlı ortamda bu bayraklar açılmaz.
+Yalnızca temiz kurulumdan çıkarılmış hayali seed verileri src/edge/seed-data.json içindedir. Çalışma veritabanındaki QA/kullanıcı kayıtları taşınmaz. Yönetici hash'i bu dosyada yoktur; ilk kurulumda Sites secret'ından üretilir. Sabit örnek ID'ler, INSERT OR IGNORE ve migration-owned SeedState kaydı mevcut düzenlemelerin sonraki açılışlarda sıfırlanmasını engeller. Şema request sırasında oluşturulmaz/değiştirilmez.
 
-HTTPS origin'de `Secure` cookie otomatik etkinleşir; sunucu Render'ın `PORT` değerini ve `0.0.0.0` bind adresini kullanır. DB dosyası ve `.env` git'e alınmaz. Sağlık endpoint'i veri veya kimlik bilgisi sızdırmaz. Demo `noindex` olarak kalır.
+## Runtime ayarları
 
-## İşletim
+Sites ortamında DEMO_MODE=true, APP_ENV=demo, COOKIE_SECURE=true, APP_URL=<public HTTPS origin> ve gizli DEMO_ADMIN_PASSWORD kullanılır. Yönetici parolası en az 20 karakterdir; public depo, istemci paketi ve hosting manifest'inde bulunmaz. Yerel SunkaDemo!2026 şifresi yayında geçerli değildir. Yerel .env, .dev.vars, DB ve araç çıktıları git'e alınmaz.
 
-Yayınlanan demo paylaşımlıdır; kötüye kullanım için süreç içi rate limit vardır, üretim güvenlik sınırı değildir. Kritik demo öncesi disk yedeği alın. Render disk yedeğini, servis planını ve uygulamayı kapatma seçeneğini hesap sahibi yönetir. Gerçek ticaret için `production-roadmap.md` uygulanmalıdır.
+Müşteri hesabı: buyer@sunka.demo / BuyerDemo!2026. Bekleyen örnek hesap: pending@sunka.demo / PendingDemo!2026. Bunlar ortak hayali demo kimlikleridir. Gerçek kişisel bilgi girilmemelidir. Yönetici parolası sunumu yapan kişiyle özel olarak paylaşılır.
 
-Kaynaklar: [Render Next.js](https://render.com/docs/deploy-nextjs-app), [Blueprint alanları](https://render.com/docs/blueprint-spec), [Kalıcı diskler](https://render.com/docs/disks), [GitHub Pages kapsamı](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
+## Worker'ı yerelde denemek
+
+```powershell
+npm install
+npm run build:site
+npm run db:setup:site
+npm run start:site
+```
+
+Önizleme: http://127.0.0.1:8787. Setup gerekirse .dev.vars.example dosyasını .dev.vars olarak kopyalar ve yerel D1 migration'larını uygular. Yerel Worker verisi .wrangler/commerce içinde korunur. Önizleme yöneticisinin şifresi .dev.vars.example içindedir; hosted yönetici için kullanılmaz.
+
+```powershell
+npm run test:worker
+```
+
+Testler tamamen hayali kayıtlar oluşturur. WORKER_BASE_URL farklı origin'e yönlendirebilir; hosted yönetici secret'ı terminal argümanlarına veya repoya konmaz. scripts/run-worker-tests.mjs test ayarlarını gizli stdin üzerinden alır.
+
+## Yayın süreci ve sınırlar
+
+Sites skill'i üzerinden build, kaynak senkronizasyonu ve artifact paketleme yapılır. Native save/deploy sonucu doğrulanmadan bir URL yayınlanmış sayılmaz. Müşteri erişimi public olarak ayarlanmıştır; ChatGPT oturumu gerekmez. Güncellemeler manuel yayınlanır. Her yeni sürüm mevcut D1 verisini korur; migration geçmişi değiştirilmez.
+
+Bu ücretsiz demo yolu işletme için SLA veya sınırsız trafik taahhüdü değildir. Sites kullanım ve platform sınırlarına tabidir. Gerçek ticaret için katalog, fiyat, güvenlik, yedekleme ve operasyon planı ayrıca ele alınmalıdır. render.yaml kullanılmayan ücretli Node alternatifi olarak tutulmuştur; otomatik dağıtımı kapalıdır.
+
+Kaynaklar: [Vinext](https://github.com/cloudflare/vinext), [Prisma D1 sınırları](https://www.prisma.io/docs/orm/v6/overview/databases/cloudflare-d1), [D1 batch](https://developers.cloudflare.com/d1/worker-api/d1-database/#batch), [Prisma ESM istemcisi](https://www.prisma.io/docs/orm/v6/prisma-schema/overview/generators).

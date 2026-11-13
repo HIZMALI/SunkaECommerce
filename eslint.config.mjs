@@ -10,5 +10,8 @@ export default defineConfig([
     "test-results/**",
     "screenshots/**",
     "next-env.d.ts",
+    "dist/**",
+    ".wrangler/**",
+    "src/generated/**",
   ]),
 ]);

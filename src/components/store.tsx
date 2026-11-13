@@ -89,7 +89,7 @@ export function StoreProvider({
       headers: { "Content-Type": "application/json", "x-locale": locale },
       body: JSON.stringify(data),
     });
-    const result = await res.json();
+    const result = (await res.json()) as T & { error?: string };
     if (!res.ok)
       throw new Error(
         result.error || t("Please try again.", "Lütfen tekrar deneyin."),

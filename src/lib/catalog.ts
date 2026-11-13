@@ -1,4 +1,4 @@
-import { db } from "./db";
+import { db } from "@/lib/db";
 import { canPrice, priceCents, quantityError, orderMultiple } from "./pricing";
 import type { CartLine, PricedLine, Product } from "./types";
 import type { Prisma } from "@prisma/client";

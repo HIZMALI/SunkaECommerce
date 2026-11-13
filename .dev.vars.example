@@ -1,0 +1,6 @@
+# Local Worker preview only. Hosted admin uses a separate Sites secret.
+DEMO_MODE="true"
+APP_ENV="demo"
+COOKIE_SECURE="false"
+APP_URL="http://127.0.0.1:8787"
+DEMO_ADMIN_PASSWORD="Local-Worker-Demo-Admin!2026"

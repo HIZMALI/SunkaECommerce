@@ -4,20 +4,28 @@
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
-    "build": "next build",
+    "build": "npm run build:next && npm run build:site",
     "start": "next start --hostname 127.0.0.1",
     "start:hosted": "node scripts/start-hosted.mjs",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "db:setup": "node scripts/setup.mjs",
     "db:seed": "tsx prisma/seed.ts",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate && node scripts/generate-edge.mjs",
+    "build:next": "next build",
+    "build:site": "node scripts/generate-edge.mjs && vite build",
+    "dev:site": "vite --host 127.0.0.1",
+    "start:site": "node scripts/preview-worker.mjs",
+    "db:generate": "drizzle-kit generate",
+    "db:setup:site": "node scripts/setup-worker-preview.mjs",
+    "test:worker": "playwright test --config playwright.worker.config.ts"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",
     "@fontsource/instrument-serif": "^5.3.0",
+    "@prisma/adapter-d1": "6.19.3",
     "@prisma/client": "6.19.3",
     "@radix-ui/react-dialog": "^1.1.15",
     "dotenv": "^18.0.10",
@@ -25,14 +33,21 @@
     "next": "16.4.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-server-dom-webpack": "^19.3.1",
     "zod": "^4.1.0"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "1.69.1",
+    "@cloudflare/workers-types": "5.20261113.1",
     "@playwright/test": "1.65.0",
     "@tailwindcss/postcss": "^4.1.0",
     "@types/node": "^24.0.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "@vitejs/plugin-rsc": "0.5.39",
+    "drizzle-kit": "0.31.11",
+    "drizzle-orm": "0.45.2",
     "eslint": "^9.0.0",
     "eslint-config-next": "16.4.6",
     "prettier": "^3.10.1",
@@ -41,12 +56,18 @@
     "tailwindcss": "^4.1.0",
     "tsx": "^4.20.0",
     "typescript": "^5.9.0",
-    "vitest": "^4.0.0"
+    "vinext": "1.4.5",
+    "vite": "8.3.8",
+    "vitest": "^4.0.0",
+    "wrangler": "^4.160.0"
   },
   "overrides": {
     "deepmerge-ts": "^8.0.0",
     "@typescript-eslint/typescript-estree": {
       "minimatch": "^11.0.1"
-    }
-  }
+    },
+    "fflate": "^0.8.3",
+    "esbuild": "^0.28.2"
+  },
+  "type": "module"
 }
