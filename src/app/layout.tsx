@@ -34,7 +34,13 @@ export default async function RootLayout({
     ((await cookies()).get("sunka_locale")?.value === "tr" ? "tr" : "en");
   return (
     <html lang={locale} data-scroll-behavior="smooth">
-      <body>{children}</body>
+      <body
+        data-hosting={
+          process.env.HOSTING_PROVIDER === "netlify" ? "netlify" : undefined
+        }
+      >
+        {children}
+      </body>
     </html>
   );
 }

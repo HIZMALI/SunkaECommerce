@@ -4189,6 +4189,9 @@ td select {
     z-index: 5;
     font-size: 11px;
   }
+  body[data-hosting="netlify"] .add-to-cart {
+    bottom: 72px;
+  }
   .product-promises {
     font-size: 8px;
     gap: 16px;
