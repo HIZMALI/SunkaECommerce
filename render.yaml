@@ -1,0 +1,36 @@
+# Full-stack customer demo. A paid web service + persistent disk is required.
+# This file declares configuration; committing it does not purchase or deploy a service.
+services:
+  - type: web
+    name: sunka-wholesale-demo
+    runtime: node
+    branch: main
+    plan: 0.5c-512mb
+    region: frankfurt
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm run start:hosted
+    healthCheckPath: /api/health
+    autoDeployTrigger: "off"
+    disk:
+      name: sunka-demo-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 24.13.1
+      - key: NODE_ENV
+        value: production
+      - key: APP_ENV
+        value: demo
+      - key: DEMO_MODE
+        value: "true"
+      - key: ALLOW_HOSTED_DEMO_SEED
+        value: "true"
+      - key: DEMO_ADMIN_PASSWORD
+        generateValue: true
+      - key: DATABASE_URL
+        value: file:/var/data/sunka-demo.db
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"

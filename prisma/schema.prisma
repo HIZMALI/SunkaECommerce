@@ -1,0 +1,175 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "sqlite"
+  url = env("DATABASE_URL")
+}
+model Category {
+  id String @id
+  title String
+  titleTr String
+  description String
+  descriptionTr String
+  image String
+  products Product[]
+}
+model Product {
+  id String @id
+  slug String @unique
+  sku String @unique
+  title String
+  titleTr String
+  description String
+  descriptionTr String
+  categoryId String
+  category Category @relation(fields: [categoryId], references: [id])
+  subcategory String
+  industry String
+  saleMode String @default("STANDARD_ORDER")
+  visible Boolean @default(true)
+  baseCents Int
+  moq Int @default(100)
+  packMultiple Int @default(50)
+  specs String
+  sourceUrl String
+  images ProductImage[]
+  variants ProductVariant[]
+  tiers PricingTier[]
+  updatedAt DateTime @updatedAt
+}
+model ProductImage {
+  id String @id @default(cuid())
+  productId String
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  src String
+  alt String
+  position Int
+}
+model ProductVariant {
+  id String @id
+  productId String
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  sku String @unique
+  shape String
+  size String
+  finish String
+  color String
+  thickness String
+  pack Int @default(50)
+  adjustmentCents Int @default(0)
+  demoCapacity Int @default(10000)
+}
+model PricingTier {
+  id String @id @default(cuid())
+  productId String
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  minQty Int
+  discountBps Int
+  @@unique([productId, minQty])
+}
+model Company {
+  id String @id @default(cuid())
+  name String
+  country String
+  address String @default("")
+  phone String @default("")
+  users User[]
+}
+model User {
+  id String @id @default(cuid())
+  email String @unique
+  name String
+  passwordHash String
+  role String @default("PENDING_BUYER")
+  companyId String?
+  company Company? @relation(fields: [companyId], references: [id])
+  sessions Session[]
+  orders Order[]
+  quotes QuoteRequest[]
+  applications WholesaleApplication[]
+}
+model Session {
+  id String @id
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+}
+model WholesaleApplication {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields: [userId], references: [id])
+  company String
+  name String
+  email String
+  phone String
+  country String
+  businessType String
+  monthlyVolume String
+  interests String
+  notes String
+  status String @default("PENDING")
+  createdAt DateTime @default(now())
+}
+model Order {
+  id String @id
+  userId String
+  user User @relation(fields: [userId], references: [id])
+  company String
+  name String
+  email String
+  phone String
+  country String
+  shippingAddress String
+  billingAddress String
+  notes String
+  status String @default("RECORDED")
+  currency String @default("USD")
+  totalCents Int
+  idempotencyKey String @unique
+  createdAt DateTime @default(now())
+  items OrderItem[]
+}
+model OrderItem {
+  id String @id @default(cuid())
+  orderId String
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String
+  variantId String
+  title String
+  titleTr String
+  variantLabel String
+  image String
+  quantity Int
+  unitCents Int
+  totalCents Int
+}
+model QuoteRequest {
+  id String @id
+  userId String?
+  user User? @relation(fields: [userId], references: [id])
+  family String
+  application String
+  shape String
+  dimensions String
+  thickness String
+  finish String
+  quantity Int
+  country String
+  company String
+  name String
+  email String
+  phone String
+  notes String
+  status String @default("NEW")
+  response String @default("")
+  createdAt DateTime @default(now())
+}
+model ContactSubmission {
+  id String @id @default(cuid())
+  name String
+  company String
+  email String
+  message String
+  createdAt DateTime @default(now())
+}
