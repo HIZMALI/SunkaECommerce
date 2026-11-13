@@ -38,11 +38,11 @@ npm start
 
 ## Yalnızca yerel demo hesapları
 
-| Rol | E-posta | Şifre |
-| --- | --- | --- |
-| Yönetici | `admin@sunka.demo` | `SunkaDemo!2026` |
-| Onaylı müşteri | `buyer@sunka.demo` | `BuyerDemo!2026` |
-| Onay bekleyen | `pending@sunka.demo` | `PendingDemo!2026` |
+| Rol            | E-posta              | Şifre              |
+| -------------- | -------------------- | ------------------ |
+| Yönetici       | `admin@sunka.demo`   | `SunkaDemo!2026`   |
+| Onaylı müşteri | `buyer@sunka.demo`   | `BuyerDemo!2026`   |
+| Onay bekleyen  | `pending@sunka.demo` | `PendingDemo!2026` |
 
 Seed bu yerel hesapları yalnızca `DEMO_MODE=true` ve `NODE_ENV` production değilken oluşturur. Normal production'da örnek kimlikler oluşturulmaz. Bunlar gerçek şirket hesapları değildir. Ayrı bir hosted demo sandbox için açık opt-in ve en az 20 karakterli, ayrı yönetici secret'ı zorunludur; [ayrıntılar](docs/deployment.md). **Yayında yerel yönetici şifresi kullanılmaz.** `npm start` ile yerel sunum için optimize build çalıştırmak, canlı ticaret entegrasyonu oluşturmaz. DEMO_MODE kapatıldığında tek tıkla müşteri demosu ve demo sipariş oluşturma kapanır. Yönetici parolası arayüzde yayımlanmaz.
 
@@ -96,4 +96,4 @@ Resmi iletişim kaynakları arasında e-posta/ikinci telefon farklılıkları va
 
 5–7 dakikalık senaryo: [docs/demo-walkthrough.md](docs/demo-walkthrough.md). Görsel kaynaklar: [docs/asset-sources.md](docs/asset-sources.md). Varsayımlar: [docs/demo-assumptions.md](docs/demo-assumptions.md). Canlıya geçiş: [docs/production-roadmap.md](docs/production-roadmap.md).
 
-Başlıca sınırlar: yerel SQLite; USD demo tahminleri; örnek konfigürasyonlar; ürün/varyant oluşturma ve görsel yükleme yönetimi bu sürümde yok; yönetim mevcut ürünlerin çekirdek alanlarını düzenler. Canlı ticaret için şirketin katalog/teknik uygunluk, fiyat/MOQ, ödeme/ERP, vergi/kargo ve hukuki/veri saklama politikalarının onaylanması gerekir. Rate limit yerel süreç belleğindedir; üretimde merkezi kalıcı sınırlama, MFA, parola sıfırlama, denetim kaydı, yedekleme ve izleme eklenmelidir.
+Başlıca sınırlar: USD demo tahminleri; örnek konfigürasyonlar; ürün/varyant oluşturma ve görsel yükleme yönetimi bu sürümde yok; yönetim mevcut ürünlerin çekirdek alanlarını düzenler. Canlı ticaret için şirketin katalog/teknik uygunluk, fiyat/MOQ, ödeme/ERP, vergi/kargo ve hukuki/veri saklama politikalarının onaylanması gerekir. Rate limit yerel süreç belleğindedir; üretimde merkezi kalıcı sınırlama, MFA, parola sıfırlama, denetim kaydı, yedekleme ve izleme eklenmelidir.

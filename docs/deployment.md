@@ -25,11 +25,13 @@ netlify.toml build komutunu npm run build:netlify, çıktı klasörünü .next o
 ```powershell
 npm install
 # Hosted ortam değişkenleri yalnız Netlify'de veya Git dışında .env.netlify içinde:
-npm run build:netlify
-npx netlify-cli deploy --prod
+# Güncellemeyi Netlify'nin Linux build ortamında yayımla:
+git push origin main
 ```
 
-Yalnız başarılı deploy kaydı yayınlandığında ve oturumsuz tarayıcı HTTPS adresini açabildiğinde yayın tamamlanmış sayılır. Public erişim yeni projelerde ayrıca açılır. Site ID'si tek başına müşteri erişimi için yeterli değildir. GitHub main kaynak kodunu barındırır; CLI ile yapılan yayınlar manuel güncellenir.
+GitHub main push webhook'u Netlify production build'ini tetikler. Netlify yalnız bu public depoyu okuyabilen bir deploy key kullanır; kaynak koda yazma yetkisi yoktur. Yayın başarılı olduğunda oturumsuz HTTPS erişimi ayrıca doğrulanır. Public erişim yeni projelerde ayrıca açılır. Windows'ta Next.js build'i çalışır; Netlify paketleyicisi sembolik bağlantı izni isteyebildiği için gerçek dağıtım Linux build ortamında yapılır.
+
+HOSTING_PROVIDER=netlify runtime ayarı, mobil sabit satın alma düğmesinin ücretsiz platform rozetine yer bırakmasını sağlar. Rozet gizlenmez; düğmenin her iki kenarı da dokunulabilir kalır.
 
 ## Doğrulama
 

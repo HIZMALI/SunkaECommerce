@@ -1,6 +1,6 @@
-# Ücretsiz müşteri yayını: Sites + Cloudflare D1
+# Alternatif yerel Worker / D1 hedefi
 
-Müşteri demosu Sites üzerinde yayımlanmak üzere hazırlanmıştır. Render aboneliği veya ücretli disk oluşturulmadı. GitHub Pages uygulamanın sunucu ve veritabanı işlemlerini çalıştıramadığı için kullanılmıyor. Public kaynak depo HIZMALI/SunkaECommerce, geliştirme dalı main olarak korunur.
+Bu belge önceki Worker adapter'ının teknik yönergesidir. Güncel müşteri yayını Netlify + PostgreSQL üzerindedir; [güncel yayın belgesini](deployment.md) kullanın. Yerel Worker önizlemesi ve testleri alternatif hedef olarak korunur.
 
 ## İki çalışma hedefi
 
