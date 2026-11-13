@@ -23,7 +23,7 @@ test("customer guide opens the buyer workflow in both languages without mobile o
     .click();
   await expect(page).toHaveURL(/\/products\/die-cut-round-boards$/);
   await expect(
-    page.getByRole("button", { name: "Add to cart", exact: true }),
+    page.getByRole("button", { name: "Add to wholesale cart", exact: true }),
   ).toBeVisible();
   await page.goto("/demo-guide?lang=tr");
   await expect(

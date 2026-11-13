@@ -45,6 +45,10 @@ async function capture(route, name, fullPage = false) {
   if (broken.length || overflow)
     throw new Error(`${route}: ${JSON.stringify({ broken, overflow })}`);
 }
+await capture("/demo-guide?lang=en", "demo-guide-desktop");
+await page.setViewportSize({ width: 390, height: 844 });
+await capture("/demo-guide?lang=tr", "demo-guide-mobile");
+await page.setViewportSize({ width: 1440, height: 900 });
 await capture("/?lang=en", "home-desktop");
 await capture("/?lang=en", "home-desktop-full", true);
 await page.setViewportSize({ width: 390, height: 844 });
