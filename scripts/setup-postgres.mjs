@@ -35,7 +35,9 @@ try {
     .readdirSync("prisma/postgresql/migrations")
     .filter((n) => n.endsWith(".sql"))
     .sort()) {
-    const sql = fs.readFileSync(`prisma/postgresql/migrations/${name}`, "utf8");
+    const sql = fs
+      .readFileSync(`prisma/postgresql/migrations/${name}`, "utf8")
+      .replace(/\r\n/g, "\n");
     const checksum = crypto.createHash("sha256").update(sql).digest("hex");
     const existing = await client.query(
       'SELECT "checksum" FROM "SunkaSchemaMigration" WHERE "id"=$1',
