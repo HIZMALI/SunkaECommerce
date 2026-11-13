@@ -222,7 +222,7 @@ function FormSuccess({
   );
 }
 export function Login() {
-  const { t, demo, buyerDemo, user } = useStore();
+  const { t, demo, buyerDemo, user, ready } = useStore();
   const router = useRouter();
   const params = useSearchParams();
   const form = useFormAction("auth/login", (r) => {
@@ -310,6 +310,7 @@ export function Login() {
             </p>
             <button
               className="button secondary full"
+              disabled={!ready}
               onClick={async () => {
                 await buyerDemo();
                 router.push("/account");
@@ -521,7 +522,7 @@ export function RequestQuote() {
   );
 }
 export function Wholesale() {
-  const { t, user, demo, buyerDemo } = useStore();
+  const { t, user, demo, buyerDemo, ready } = useStore();
   const form = useFormAction("applications");
   return (
     <>
@@ -589,7 +590,11 @@ export function Wholesale() {
                 <Arrow />
               </A>
               {demo && (
-                <button className="button secondary full" onClick={buyerDemo}>
+                <button
+                  className="button secondary full"
+                  disabled={!ready}
+                  onClick={buyerDemo}
+                >
                   {t("Explore Buyer Demo", "Müşteri demosunu keşfet")}
                   <Arrow />
                 </button>

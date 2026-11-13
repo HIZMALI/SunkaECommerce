@@ -442,9 +442,10 @@ export function Account({
   orders: OrderView[];
   quotes: QuoteView[];
 }) {
-  const { t, val, user, api, title, locale } = useStore();
+  const { t, val, user, api, title, locale, ready, toast } = useStore();
   const router = useRouter();
   const [tab, setTab] = useState("orders");
+  const [signingOut, setSigningOut] = useState(false);
   const profile = useFormAction("account", () => router.refresh());
   if (!user)
     return (
@@ -483,9 +484,16 @@ export function Account({
           <Status value={canPrice(user.role) ? "APPROVED" : "PENDING"} />
           <button
             className="text-link"
+            disabled={!ready || signingOut}
             onClick={async () => {
-              await api("auth/logout", {});
-              router.refresh();
+              setSigningOut(true);
+              try {
+                await api("auth/logout", {});
+                router.refresh();
+              } catch (error) {
+                toast((error as Error).message);
+                setSigningOut(false);
+              }
             }}
           >
             {t("Sign out", "Çıkış yap")}

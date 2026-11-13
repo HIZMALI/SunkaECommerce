@@ -12,7 +12,7 @@ import { useStore } from "./store";
 import { A, Arrow, Breadcrumb, DemoNote, PageHeading, Photo } from "./ui";
 import { canPrice } from "@/lib/pricing";
 export function DemoGuide() {
-  const { t, demo, user, buyerDemo } = useStore();
+  const { t, demo, user, buyerDemo, ready } = useStore();
   const steps = [
     {
       title: t("Discover the right material", "Doğru malzemeyi keşfedin"),
@@ -123,7 +123,11 @@ export function DemoGuide() {
         </div>
         <div>
           {demo && (
-            <button className="button full" onClick={buyerDemo}>
+            <button
+              className="button full"
+              disabled={!ready}
+              onClick={buyerDemo}
+            >
               {canPrice(user?.role) ? (
                 <Check size={17} />
               ) : (

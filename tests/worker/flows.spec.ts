@@ -306,7 +306,15 @@ test("Worker: authorization, quantity rejection, server repricing and idempotenc
   await page.goto(`/account/orders/${id}`);
   await expect(page.getByText("$68.00", { exact: true }).first()).toBeVisible();
   await page.goto("/account");
-  await page.getByRole("button", { name: "Sign out", exact: true }).click();
+  const [logout] = await Promise.all([
+    page.waitForResponse(
+      (response) =>
+        response.url().endsWith("/api/auth/logout") &&
+        response.request().method() === "POST",
+    ),
+    page.getByRole("button", { name: "Sign out", exact: true }).click(),
+  ]);
+  expect(logout.ok()).toBe(true);
   await expect(
     page.getByRole("heading", { name: "Good to have you here." }),
   ).toBeVisible();

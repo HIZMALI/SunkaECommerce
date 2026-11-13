@@ -805,7 +805,11 @@ export function Configurator({
             </A>
           )}
           {demo && (
-            <button className="button secondary full" onClick={buyerDemo}>
+            <button
+              className="button secondary full"
+              disabled={!ready}
+              onClick={buyerDemo}
+            >
               {t("Explore Buyer Demo", "Müşteri demosunu keşfet")}
               <Arrow />
             </button>

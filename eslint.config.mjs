@@ -7,6 +7,7 @@ export default defineConfig([
   globalIgnores([
     ".next/**",
     "playwright-report/**",
+    "playwright-report-worker/**",
     "test-results/**",
     "screenshots/**",
     "next-env.d.ts",
