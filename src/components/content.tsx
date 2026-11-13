@@ -329,8 +329,8 @@ export function FAQ() {
     [
       "Is this a live shop?",
       "Bu canlı bir mağaza mı?",
-      "This is a local customer-presentation demo. Orders, quote requests, applications and contact messages are recorded in a local database. No payment, email, ERP or shipping operation is performed.",
-      "Bu yerel bir müşteri sunum demosudur. Sipariş, teklif, başvuru ve mesajlar yerel veritabanına kaydedilir. Ödeme, e-posta, ERP veya taşıma işlemi yapılmaz.",
+      "This is a customer-presentation demo. Orders, quote requests, applications and contact messages are recorded in the demo database. No payment, email, ERP or shipping operation is performed.",
+      "Bu bir müşteri sunum demosudur. Sipariş, teklif, başvuru ve mesajlar demo veritabanına kaydedilir. Ödeme, e-posta, ERP veya taşıma işlemi yapılmaz.",
     ],
     [
       "Are the products and images real?",

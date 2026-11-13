@@ -74,7 +74,7 @@ export function Admin({
         <p className="eyebrow">{t("THE BUSINESS SPACE", "İŞLETME ALANI")}</p>
         <h2>Sun-Ka / Larton</h2>
         <p className="admin-mode">
-          {t("Local demonstration", "Yerel gösterim")}
+          {t("Demo workspace", "Demo çalışma alanı")}
         </p>
         <nav>
           {nav.map(([id, Icon, name]) => (
@@ -130,8 +130,8 @@ export function Admin({
               </h1>
               <p>
                 {t(
-                  "Sample operations. Real local records.",
-                  "Örnek işlemler. Gerçek yerel kayıtlar.",
+                  "Sample operations. Recorded for review.",
+                  "Örnek işlemler. İnceleme için kayıtlı.",
                 )}
               </p>
             </div>
@@ -155,8 +155,8 @@ export function Admin({
                     t("Demo orders", "Demo siparişler"),
                     String(orders.length),
                     t(
-                      "Locally recorded purchase orders",
-                      "Yerel kaydedilen satın alma siparişleri",
+                      "Recorded demo purchase orders",
+                      "Kaydedilen demo satın alma siparişleri",
                     ),
                   ],
                   [
@@ -393,8 +393,8 @@ export function Admin({
                     <p className="message-text">{m.message}</p>
                     <p className="muted">
                       {t(
-                        "Recorded locally. No email sent.",
-                        "Yerel olarak kaydedildi. E-posta gönderilmedi.",
+                        "Recorded for review. No email sent.",
+                        "İnceleme için kaydedildi. E-posta gönderilmedi.",
                       )}
                     </p>
                   </article>

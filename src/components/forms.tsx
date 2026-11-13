@@ -202,7 +202,7 @@ function FormSuccess({
     <div className="form-success" role="status">
       <CheckCircle2 size={42} strokeWidth={1.2} />
       <p className="eyebrow">
-        {t("RECORDED LOCALLY", "YEREL OLARAK KAYDEDİLDİ")}
+        {t("DEMO RECORD SAVED", "DEMO KAYDI OLUŞTURULDU")}
       </p>
       <h2>{title}</h2>
       <p className="success-id">{id}</p>
@@ -379,8 +379,8 @@ export function RequestQuote() {
           </div>
           <p className="muted">
             {t(
-              "This demo records your enquiry locally. No email is sent and no commercial quote is issued.",
-              "Bu demo talebinizi yerel olarak kaydeder. E-posta gönderilmez, ticari teklif verilmez.",
+              "This demo records your enquiry for review. No email is sent and no commercial quote is issued.",
+              "Bu demo talebinizi inceleme için kaydeder. E-posta gönderilmez, ticari teklif verilmez.",
             )}
           </p>
         </aside>
@@ -837,8 +837,8 @@ export function Contact() {
                 "Demo mesajınız kaydedildi.",
               )}
               description={t(
-                "It is available in the local administrator panel. No email was sent to the company.",
-                "Yerel yönetim panelinde görüntülenebilir. Şirkete e-posta gönderilmedi.",
+                "It is available in the administrator panel. No email was sent to the company.",
+                "Yönetim panelinde görüntülenebilir. Şirkete e-posta gönderilmedi.",
               )}
             />
           ) : (
@@ -846,8 +846,8 @@ export function Contact() {
               <h2>{t("Start a conversation.", "Bir konuşma başlatın.")}</h2>
               <p className="muted">
                 {t(
-                  "Demo form — messages are saved locally, not sent.",
-                  "Demo formu — mesajlar yerel kaydedilir, gönderilmez.",
+                  "Demo form — messages are recorded for review. No email is sent.",
+                  "Demo formu — mesajlar inceleme için kaydedilir. E-posta gönderilmez.",
                 )}
               </p>
               <div className="form-grid">
